@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { CartProvider } from "@/components/cart/CartProvider";
 import { SITE } from "@/lib/data";
 import "./globals.css";
 
@@ -39,9 +40,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfair.variable} ${sourceSans.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1 pt-16 md:pt-20">{children}</main>
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <main className="flex-1 pt-16 md:pt-20">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sunny Cakes
 
 Site web pour **Sunny Cakes** — pâtisserie artisanale & gâteaux sur mesure à Valenciennes.
@@ -49,3 +50,6 @@ npm start
 - Brancher le formulaire / configurateur à un backend (email, CRM)
 - Ajouter panier + paiement Stripe pour pâtisseries
 - Mettre à jour les liens Instagram et Uber Eats réels
+=======
+# Sunny-cake
+>>>>>>> b66ce3b0d5130aea90baa81a7a5c3253b35b60e9

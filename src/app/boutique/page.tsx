@@ -26,7 +26,9 @@ export default function BoutiquePage() {
           <Button href="/boutique/gateaux" variant="secondary">
             Gâteaux
           </Button>
-          <Button href="/gateaux-sur-mesure">Sur mesure</Button>
+          <Button href="/gateaux-sur-mesure" className="bg-primary-text text-white hover:bg-[#5B4A50]">
+            Sur mesure
+          </Button>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

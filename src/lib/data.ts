@@ -6,8 +6,8 @@ export const SITE = {
   address: "76T Rue du Quesnoy, 59300 Valenciennes, France",
   phone: "+33 9 56 62 64 73",
   email: "contact@sunnycakes.fr",
-  instagram: "https://instagram.com",
-  ubereats: "https://ubereats.com",
+  instagram: "https://www.instagram.com/sunnycake.valenciennes/",
+  ubereats: "https://www.ubereats.com/fr/store/sunny-cakes/TrS-pnpPWwC5XFgeBuUi0w?diningMode=PICKUP&rwg_token=AE37R_hc4LBYvDjxoRIt2NZZeIuit3QeKTtoh5M0-iBmG1ibf5-0jAa2G3_9SeRkQJRA1ic1JTq68TLqgqDoeQQYWBPqJg3ecn_oC_fsafWw-W265mTdtGc%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas&from_challenge=1",
   rating: 4.8,
   reviewCount: 76,
   hours: "Ouvert · Ferme à 19h30",
@@ -27,24 +27,21 @@ export const CATEGORY_TILES: CategoryTile[] = [
     title: "Pâtisseries",
     description: "Viennoiseries, entremets et douceurs du jour",
     href: "/boutique/patisseries",
-    image:
-      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80",
+    image: "/cakes/strawberry-verrines.webp",
   },
   {
     id: "gateaux",
     title: "Gâteaux",
     description: "Anniversaires, fêtes et célébrations",
     href: "/boutique/gateaux",
-    image:
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
+    image: "/cakes/strawberry-cupcakes.webp",
   },
   {
     id: "custom",
     title: "Sur mesure",
     description: "Créez le gâteau de vos rêves",
     href: "/gateaux-sur-mesure",
-    image:
-      "https://images.unsplash.com/photo-1464349095431-e9a21285b5aa?w=800&q=80",
+    image: "/cakes/aperol-spritz.jpg",
   },
   {
     id: "mariage",
@@ -52,7 +49,7 @@ export const CATEGORY_TILES: CategoryTile[] = [
     description: "Pièces montées & consultations",
     href: "/mariage",
     image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+      "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg",
   },
 ];
 
@@ -220,38 +217,58 @@ export const INSTAGRAM_POSTS = [
   {
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
+      "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg",
     alt: "Gâteau au chocolat",
   },
   {
     id: "2",
     image:
-      "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+      "/instagram/510957703_18083241469752445_4666203883791157357_n.jpg",
     alt: "Fraisier",
   },
   {
     id: "3",
     image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
+      "/instagram/581740305_18096868219752445_6650576276840332859_n.jpg",
     alt: "Gâteau de mariage",
   },
   {
     id: "4",
     image:
-      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
+      "/instagram/610308441_18102543748752445_3962388717944611297_n.jpg",
     alt: "Viennoiseries",
   },
   {
     id: "5",
     image:
-      "https://images.unsplash.com/photo-1464349095431-e9a21285b5aa?w=600&q=80",
+      "/instagram/611665104_18102543685752445_5628411739489225522_n.jpg",
     alt: "Gâteau personnalisé",
   },
   {
     id: "6",
     image:
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80",
+      "/instagram/620982637_18104295232752445_3470182747740634475_n.jpg",
     alt: "Paris-Brest",
+  },
+  {
+    id: "7",
+    image: "/instagram/624160035_18105362659752445_7922337456158117569_n.jpg",
+    alt: "Gâteau équestre personnalisé",
+  },
+  {
+    id: "8",
+    image: "/instagram/722637648_18118421716752445_430082563389280011_n.jpg",
+    alt: "Gâteau de baptême bleu ciel",
+  },
+  {
+    id: "9",
+    image: "/instagram/731142429_18120781585752445_2027953214602976917_n.jpg",
+    alt: "Gâteau de dix-huit ans thème océan",
+  },
+  {
+    id: "10",
+    image: "/instagram/731175343_18120781567752445_7006623568685025379_n.jpg",
+    alt: "Gâteau orange Aperol Spritz",
   },
 ];
 

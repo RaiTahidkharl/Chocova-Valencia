@@ -1,44 +1,58 @@
 import { REVIEWS } from "@/lib/data";
+import type { Review } from "@/lib/types";
+
+function ReviewCard({ review }: { review: Review }) {
+  return (
+    <blockquote className="w-[min(21rem,calc(100vw-3rem))] shrink-0 rounded-2xl border border-muted-pink bg-background-card p-6 text-primary-text shadow-sm">
+      <div className="mb-4 flex gap-0.5 text-accent-pink" aria-label={`${review.rating} sur 5`}>
+        {Array.from({ length: review.rating }).map((_, index) => (
+          <span key={index} aria-hidden>★</span>
+        ))}
+      </div>
+      <p className="text-sm leading-7 text-primary-text/90">
+        &ldquo;{review.text}&rdquo;
+      </p>
+      <footer className="mt-5 flex items-center justify-between gap-4 border-t border-muted-pink pt-4">
+        <cite className="text-sm font-semibold not-italic text-primary-text">
+          {review.author}
+        </cite>
+        {review.tag && (
+          <span className="rounded-full bg-background-light px-2.5 py-1 text-xs font-medium text-primary-text">
+            {review.tag}
+          </span>
+        )}
+      </footer>
+    </blockquote>
+  );
+}
 
 export function ReviewsSection() {
   return (
-    <section id="avis" className="py-16 md:py-24 bg-white">
+    <section id="avis" className="overflow-hidden bg-[#FFF8FA] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="text-center mb-10 md:mb-14">
-          <h2 className="font-serif text-3xl md:text-4xl text-chocolate">
+        <div className="mb-10 text-center md:mb-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-pink">Avis clients</p>
+          <h2 className="mt-3 font-serif text-3xl text-primary-text md:text-4xl">
             Ce que disent nos clients
           </h2>
-          <p className="mt-3 text-muted">
+          <p className="mt-3 text-primary-text/75">
             4.8 sur 5 · 76 avis Google · Valenciennes
           </p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {REVIEWS.map((review) => (
-            <blockquote
-              key={review.id}
-              className="bg-cream rounded-xl p-6 border border-border"
-            >
-              <div className="flex gap-0.5 text-sunny mb-3">
-                {Array.from({ length: review.rating }).map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
-              </div>
-              <p className="text-chocolate leading-relaxed text-sm">
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <footer className="mt-4 flex items-center justify-between">
-                <cite className="not-italic font-medium text-chocolate text-sm">
-                  {review.author}
-                </cite>
-                {review.tag && (
-                  <span className="text-xs text-caramel bg-caramel/10 px-2 py-1 rounded-full">
-                    {review.tag}
-                  </span>
-                )}
-              </footer>
-            </blockquote>
-          ))}
+      <div className="review-marquee" aria-label="Avis de nos clients">
+        <div className="review-marquee-track">
+          <div className="review-marquee-group">
+            {REVIEWS.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+          <div className="review-marquee-group" aria-hidden="true">
+            {REVIEWS.map((review) => (
+              <ReviewCard key={`${review.id}-duplicate`} review={review} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

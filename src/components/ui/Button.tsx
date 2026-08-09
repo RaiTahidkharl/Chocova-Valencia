@@ -15,11 +15,11 @@ interface ButtonProps {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-chocolate text-cream hover:bg-chocolate/90 shadow-sm",
+    "bg-accent-pink text-primary-text hover:bg-accent-pink/85 shadow-sm",
   secondary:
-    "border-2 border-caramel text-chocolate hover:bg-caramel/10",
+    "border-2 border-primary-text text-primary-text hover:bg-muted-pink/60",
   ghost:
-    "text-chocolate underline-offset-4 hover:underline",
+    "text-primary-text underline-offset-4 hover:underline",
 };
 
 export function Button({

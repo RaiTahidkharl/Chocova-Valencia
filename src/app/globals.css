@@ -1,17 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #faf6f0;
-  --sunny: #f4c542;
-  --pink: #f3a6b7;
-  --caramel: #c4956a;
-  --chocolate: #3d2b1f;
-  --white: #ffffff;
-  --muted: #6b5d54;
-  --border: #e8dfd4;
+  --background-light: #FFE8E7;
+  --background-card: #FFE5EE;
+  --primary-text: #47383E;
+  --accent-pink: #FA509B;
+  --muted-pink: #E4CDD6;
+  --white: #FFFFFF;
+  --black: #000000;
+  --cream: var(--background-light);
+  --sunny: var(--accent-pink);
+  --pink: var(--accent-pink);
+  --caramel: #B06F87;
+  --chocolate: var(--primary-text);
+  --muted: #6E5A63;
+  --border: var(--muted-pink);
 }
 
 @theme inline {
+  --color-background-light: var(--background-light);
+  --color-background-card: var(--background-card);
+  --color-primary-text: var(--primary-text);
+  --color-accent-pink: var(--accent-pink);
+  --color-muted-pink: var(--muted-pink);
+  --color-white: var(--white);
+  --color-black: var(--black);
   --color-cream: var(--cream);
   --color-sunny: var(--sunny);
   --color-pink: var(--pink);
@@ -52,6 +65,30 @@ body {
   animation: float-soft 6s ease-in-out -3s infinite;
 }
 
+.review-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.review-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: review-marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.review-marquee-group {
+  display: flex;
+  flex: none;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.review-marquee:hover .review-marquee-track,
+.review-marquee:focus-within .review-marquee-track {
+  animation-play-state: paused;
+}
+
 .lift-card {
   transform: perspective(1000px) translateZ(0);
   transition: transform 500ms cubic-bezier(.2, .8, .2, 1), box-shadow 500ms ease;
@@ -82,12 +119,26 @@ body {
   50% { transform: translate3d(0, -12px, 0) rotate(2deg); }
 }
 
+@keyframes review-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .review-marquee-track {
+    animation: none;
+    width: auto;
+  }
+
+  .review-marquee-group[aria-hidden="true"] {
+    display: none;
   }
 }
 
