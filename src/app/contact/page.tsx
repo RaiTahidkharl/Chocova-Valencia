@@ -22,18 +22,18 @@ export default function ContactPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="bg-chocolate text-cream rounded-2xl p-8 md:p-10">
+          <div className="bg-chocolate text-[#F5EBE6] rounded-2xl p-8 md:p-10">
             <h2 className="font-serif text-2xl mb-6">Nous trouver</h2>
-            <address className="not-italic space-y-3 text-cream/90 text-sm">
+            <address className="not-italic space-y-3 text-sm text-[#F5EBE6]">
               <p>{SITE.address}</p>
               <p>{SITE.hours}</p>
               <p>
-                <a href={`tel:${SITE.phone}`} className="hover:text-sunny">
+                <a href={`tel:${SITE.phone}`} className="transition-colors hover:text-white">
                   {SITE.phone}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${SITE.email}`} className="hover:text-sunny">
+                <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-white">
                   {SITE.email}
                 </a>
               </p>
@@ -41,7 +41,7 @@ export default function ContactPage() {
             <div className="mt-8">
               <Button
                 href={mapsUrl}
-                className="bg-sunny text-chocolate hover:bg-sunny/90"
+                className="bg-[#FFF0F2] text-[#332827] hover:bg-white"
               >
                 Itinéraire Google Maps
               </Button>
