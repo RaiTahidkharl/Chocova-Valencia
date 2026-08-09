@@ -71,7 +71,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email *"
+                placeholder="E-mail *"
                 required
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               />

@@ -6,9 +6,9 @@ import { useCart } from "@/components/cart/CartProvider";
 import type { Product } from "@/lib/types";
 
 const BADGE_LABELS = {
-  nouveau: "New",
-  "best-seller": "Bestseller",
-  mariage: "Wedding",
+  nouveau: "Nouveau",
+  "best-seller": "Meilleure vente",
+  mariage: "Mariage",
 };
 
 interface ProductCardProps {
@@ -19,8 +19,8 @@ export function ProductCard({ product }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const { addToCart } = useCart();
   const metadata = product.serves || product.leadTime
-    ? [product.serves ?? "Freshly made", product.leadTime ? `Prep time: ${product.leadTime}` : "Ready for pickup"].join(" · ")
-    : "Ready for immediate pickup";
+    ? [product.serves ?? "Préparé avec soin", product.leadTime ? `Préparation : ${product.leadTime}` : "Prêt à retirer"].join(" · ")
+    : "Disponible à retirer immédiatement";
 
   const openQuickView = () => setIsQuickViewOpen(true);
 
@@ -34,7 +34,7 @@ export function ProductCard({ product }: ProductCardProps) {
         }}
         role="button"
         tabIndex={0}
-        aria-label={`Quick view: ${product.name}`}
+        aria-label={`Aperçu rapide : ${product.name}`}
       >
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted-pink">
           <Image
@@ -86,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
             }}
             className="mt-auto inline-flex min-h-11 items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:scale-[1.02] hover:bg-[#5B4A50] active:scale-[0.98]"
           >
-            Add to Order
+            Ajouter à la commande
           </button>
         </div>
       </article>
@@ -104,7 +104,7 @@ export function ProductCard({ product }: ProductCardProps) {
               type="button"
               className="absolute right-6 top-6 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background-light/90 text-xl text-primary-text"
               onClick={() => setIsQuickViewOpen(false)}
-              aria-label="Close quick view"
+              aria-label="Fermer l’aperçu rapide"
             >
               ×
             </button>
@@ -126,7 +126,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 }}
                 className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white hover:bg-[#5B4A50]"
               >
-                Add to Order
+                Ajouter à la commande
               </button>
             </div>
           </div>

@@ -18,7 +18,7 @@ export function InstagramGallery() {
     <section className="bg-[#FFF8FA] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <header className="relative mb-10 text-center md:mb-12">
-          <h2 className="font-serif text-3xl text-primary-text md:text-5xl">Follow Us On Instagram</h2>
+          <h2 className="font-serif text-3xl text-primary-text md:text-5xl">Suivez-nous sur Instagram</h2>
           <a
             href={SITE.instagram}
             target="_blank"
@@ -29,7 +29,7 @@ export function InstagramGallery() {
             @sunnycake.valenciennes
           </a>
           <p className="mx-auto mt-3 max-w-xl text-primary-text/75">
-            Our latest creations, behind-the-scenes, and gourmet inspiration.
+            Nos dernières créations, les coulisses et des inspirations gourmandes.
           </p>
         </header>
 
@@ -41,7 +41,7 @@ export function InstagramGallery() {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-2xl bg-muted-pink shadow-sm shadow-primary-text/10"
-              aria-label={`View ${post.alt} on Instagram`}
+              aria-label={`Voir ${post.alt} sur Instagram`}
             >
               <Image
                 src={post.image}
@@ -52,7 +52,7 @@ export function InstagramGallery() {
               />
               <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-t from-primary-text/65 via-primary-text/25 to-primary-text/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <InstagramIcon className="h-8 w-8 text-white" />
-                <span className="text-sm font-semibold text-white underline underline-offset-4">View Post</span>
+                <span className="text-sm font-semibold text-white underline underline-offset-4">Voir la publication</span>
               </span>
             </a>
           ))}
@@ -66,7 +66,7 @@ export function InstagramGallery() {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#332827] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-text/15 transition-all duration-200 hover:scale-[1.02] hover:bg-[#4A3E3D] active:scale-[0.98]"
           >
             <InstagramIcon className="h-4 w-4" />
-            Follow @sunnycake on Instagram
+            Suivre @sunnycake sur Instagram
           </a>
         </div>
       </div>

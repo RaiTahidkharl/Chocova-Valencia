@@ -20,7 +20,7 @@ export function Footer() {
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook Sunny Cakes" className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
+              <a href="https://web.facebook.com/sunnycakesvalenciennes/?locale=fr_FR&_rdc=1&_rdr#" target="_blank" rel="noreferrer" aria-label="Facebook Sunny Cakes" className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
                 <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
                   <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V10H8v3h2.4v8h3.1Z" />
                 </svg>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-wider text-[#E2D7D5]/70">Newsletter</p>
+            <p className="mb-4 text-sm font-medium uppercase tracking-wider text-[#E2D7D5]/70">Lettre d&apos;information</p>
             <p className="text-sm leading-relaxed text-[#E2D7D5]">Recevez nos nouveautés et inspirations gourmandes.</p>
             <form action={`mailto:${SITE.email}?subject=Inscription%20newsletter%20Sunny%20Cakes`} method="post" encType="text/plain" className="mt-4 flex overflow-hidden rounded-full border border-[#F5EBE6]/40 bg-white/5">
               <label className="sr-only" htmlFor="footer-newsletter-email">Votre adresse e-mail</label>

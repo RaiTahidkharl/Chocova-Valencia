@@ -148,7 +148,7 @@ export function CakeBuilder() {
             </legend>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "Individual",
+                "Individuel",
                 "15 cm (6-8 parts)",
                 "20 cm (10-12 parts)",
                 "25 cm (15-20 parts)",
@@ -336,7 +336,7 @@ export function CakeBuilder() {
             />
             <input
               type="email"
-              placeholder="Email *"
+              placeholder="E-mail *"
               value={data.email}
               onChange={(e) => update("email", e.target.value)}
               required
