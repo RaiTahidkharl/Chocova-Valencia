@@ -26,7 +26,7 @@ export function InstagramGallery() {
             className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-text underline decoration-primary-text/40 decoration-2 underline-offset-4 transition-colors hover:text-accent-pink lg:absolute lg:right-0 lg:top-3 lg:mt-0"
           >
             <InstagramIcon className="h-5 w-5" />
-            @sunnycake.valenciennes
+            @chocovavalencia
           </a>
           <p className="mx-auto mt-3 max-w-xl text-primary-text/75">
             Nos dernières créations, les coulisses et des inspirations gourmandes.
@@ -66,7 +66,7 @@ export function InstagramGallery() {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#332827] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-text/15 transition-all duration-200 hover:scale-[1.02] hover:bg-[#4A3E3D] active:scale-[0.98]"
           >
             <InstagramIcon className="h-4 w-4" />
-            Suivre @sunnycake sur Instagram
+            Suivre @chocovavalencia sur Instagram
           </a>
         </div>
       </div>

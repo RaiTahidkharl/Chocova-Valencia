@@ -17,6 +17,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+  const [customization, setCustomization] = useState("");
   const { addToCart } = useCart();
   const metadata = product.serves || product.leadTime
     ? [product.serves ?? "Préparé avec soin", product.leadTime ? `Préparation : ${product.leadTime}` : "Prêt à retirer"].join(" · ")
@@ -82,7 +83,7 @@ export function ProductCard({ product }: ProductCardProps) {
             type="button"
             onClick={(event) => {
               event.stopPropagation();
-              addToCart(product);
+              setIsQuickViewOpen(true);
             }}
             className="mt-auto inline-flex min-h-11 items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:scale-[1.02] hover:bg-[#5B4A50] active:scale-[0.98]"
           >
@@ -118,10 +119,14 @@ export function ProductCard({ product }: ProductCardProps) {
               </div>
               <p className="mt-3 leading-7 text-[#4A3E3D]">{product.description}</p>
               <p className="mt-3 text-sm font-semibold text-[#4A3E3D]">{metadata}</p>
+              <label className="mt-5 block text-sm font-semibold text-primary-text">
+                Personaliza tu pedido
+                <input value={customization} onChange={(event) => setCustomization(event.target.value)} placeholder="Sabor, mensaje o detalle (opcional)" className="mt-2 w-full rounded-lg border border-muted-pink bg-white px-3 py-2 text-sm font-normal outline-none focus:border-primary-text" />
+              </label>
               <button
                 type="button"
                 onClick={() => {
-                  addToCart(product);
+                  addToCart(product, customization.trim() || undefined);
                   setIsQuickViewOpen(false);
                 }}
                 className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white hover:bg-[#5B4A50]"

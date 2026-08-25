@@ -6,12 +6,13 @@ import type { Product } from "@/lib/types";
 type CartItem = {
   product: Product;
   quantity: number;
+  customization?: string;
 };
 
 type CartContextValue = {
   items: CartItem[];
   itemCount: number;
-  addToCart: (product: Product) => void;
+  addToCart: (product: Product, customization?: string) => void;
   removeFromCart: (productId: string) => void;
 };
 
@@ -23,15 +24,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = useMemo(() => ({
     items,
     itemCount: items.reduce((total, item) => total + item.quantity, 0),
-    addToCart: (product: Product) => {
+    addToCart: (product: Product, customization?: string) => {
       setItems((current) => {
-        const existing = current.find((item) => item.product.id === product.id);
+        const existing = current.find((item) => item.product.id === product.id && item.customization === customization);
         if (existing) {
           return current.map((item) => item.product.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item);
         }
-        return [...current, { product, quantity: 1 }];
+        return [...current, { product, quantity: 1, customization }];
       });
     },
     removeFromCart: (productId: string) => {
