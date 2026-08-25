@@ -44,9 +44,9 @@ export const CATEGORY_TILES: CategoryTile[] = [
     image: "/cakes/aperol-spritz.jpg",
   },
   {
-    id: "mariage",
-    title: "Mariage",
-    description: "Pièces montées & consultations",
+    id: "celebrations",
+    title: "Celebrations",
+    description: "Cakes for life’s most special moments",
     href: "/mariage",
     image:
       "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg",

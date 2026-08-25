@@ -1,0 +1,55 @@
+"use client";
+
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { Button } from "@/components/ui/Button";
+
+const CELEBRATIONS = [
+  { title: "Wedding Cakes", text: "A personalised sweet creation for your wedding celebration.", image: "/cakes/black-ribbon-tier.jpg" },
+  { title: "Birthday Cakes", text: "A cake designed around the person, theme and moment being celebrated.", image: "/cakes/birthday-crown.jpg" },
+  { title: "Baptism Cakes", text: "Delicate, personalised cakes for a meaningful family celebration.", image: "/cakes/balloon-baptism.jpg" },
+  { title: "Communion Cakes", text: "Thoughtful cake designs for communion celebrations and family gatherings.", image: "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg" },
+  { title: "Corporate Event Cakes", text: "Custom sweet creations for company events and special occasions.", image: "/cakes/celebration-artist.jpg" },
+] as const;
+
+export function CelebrationExplorer() {
+  const [selected, setSelected] = useState(CELEBRATIONS[0]);
+  const detailsRef = useRef<HTMLDivElement>(null);
+
+  function selectCelebration(celebration: (typeof CELEBRATIONS)[number]) {
+    setSelected(celebration);
+    window.setTimeout(() => detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 0);
+  }
+
+  return <section className="py-12 md:py-16">
+    <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-sm font-semibold uppercase tracking-[.2em] text-accent-pink">Celebrations</p>
+        <h1 className="mt-3 font-serif text-4xl text-primary-text md:text-5xl">Moments made memorable</h1>
+        <p className="mt-4 text-primary-text/75">Choose an occasion to discover the kind of personalised creation Chocova can prepare for your celebration.</p>
+      </div>
+
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {CELEBRATIONS.map((celebration) => <button key={celebration.title} type="button" onClick={() => selectCelebration(celebration)} className={`group relative aspect-[4/5] overflow-hidden rounded-2xl text-left transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-pink ${selected.title === celebration.title ? "ring-2 ring-accent-pink ring-offset-2" : "hover:-translate-y-1"}`}>
+          <Image src={celebration.image} alt={celebration.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 50vw, 20vw"/>
+          <span className="absolute inset-0 bg-gradient-to-t from-primary-text/80 via-primary-text/20 to-transparent"/>
+          <span className="absolute inset-x-0 bottom-0 p-4 font-serif text-xl text-white">{celebration.title}</span>
+        </button>)}
+      </div>
+
+      <div ref={detailsRef} className="mt-14 grid min-h-[520px] scroll-mt-28 overflow-hidden rounded-[2rem] bg-[#FFF0F2] lg:grid-cols-[1.15fr_1fr]">
+        <div className="relative flex min-h-[380px] items-center justify-center bg-[#F8E5E8] p-5 md:p-8 lg:min-h-[520px]">
+          <Image src={selected.image} alt={selected.title} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 55vw"/>
+        </div>
+        <div className="flex items-center p-8 md:p-14 lg:p-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[.18em] text-accent-pink">Selected celebration</p>
+            <h2 className="mt-4 font-serif text-4xl text-primary-text md:text-5xl">{selected.title}</h2>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-primary-text/80">{selected.text}</p>
+            <Button href="/gateaux-sur-mesure" className="mt-9 bg-primary-text text-white hover:bg-[#5B4A50]">Diseña tu tarta</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>;
+}
