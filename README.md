@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# Sunny Cakes
+# Chocova Valencia
 
-Site web pour **Sunny Cakes** — pâtisserie artisanale & gâteaux sur mesure à Valenciennes.
+Site web pour **Chocova Valencia** — pâtisserie artisanale & gâteaux sur mesure à Valenciennes.
 
 ## Stack
 
@@ -41,7 +41,7 @@ npm start
 
 ## Design system
 
-- **Couleurs :** Cream `#FAF6F0`, Sunny `#F4C542`, Caramel `#C4956A`, Chocolate `#3D2B1F`
+- **Couleurs :** Cream `#FAF6F0`, Chocova Valencia `#F4C542`, Caramel `#C4956A`, Chocolate `#3D2B1F`
 - **Typographie :** Playfair Display (titres), Source Sans 3 (corps)
 
 ## Prochaines étapes
@@ -51,5 +51,5 @@ npm start
 - Ajouter panier + paiement Stripe pour pâtisseries
 - Mettre à jour les liens Instagram et Uber Eats réels
 =======
-# Sunny-cake
+# Chocova Valencia-cake
 >>>>>>> b66ce3b0d5130aea90baa81a7a5c3253b35b60e9
