@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE.name,
     description: SITE.tagline,
-    locale: "fr_FR",
+    locale: "es_ES",
     type: "website",
   },
 };
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="fr"
+      lang="es"
       className={`${playfair.variable} ${sourceSans.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col antialiased">

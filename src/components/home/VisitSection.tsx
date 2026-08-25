@@ -43,8 +43,8 @@ export function VisitSection() {
             </div>
             <div className="min-h-[280px] lg:min-h-[360px]">
               <iframe
-                title="Sunny Cakes sur Google Maps"
-                src="https://maps.google.com/maps?q=76T+Rue+du+Quesnoy+59300+Valenciennes&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Chocova Valencia en Google Maps"
+                src="https://maps.google.com/maps?q=Carrer+de+Matias+Perell%C3%B3+55+46005+Valencia&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="h-full min-h-[280px] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

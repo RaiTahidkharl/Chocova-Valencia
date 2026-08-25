@@ -7,13 +7,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-[60px] md:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="mb-3 font-serif text-2xl">Sunny Cakes</p>
+            <p className="mb-3 font-serif text-2xl">Chocova Valencia</p>
             <p className="max-w-sm text-sm leading-relaxed text-[#E2D7D5]">
               {SITE.tagline}. Artisan pâtissier à Valenciennes — gâteaux sur
               mesure, pâtisseries fines et créations pour vos moments précieux.
             </p>
             <div className="mt-6 flex gap-3">
-              <a href={SITE.instagram} target="_blank" rel="noreferrer" aria-label="Instagram Sunny Cakes" className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
+              <a href={SITE.instagram} target="_blank" rel="noreferrer" aria-label="Instagram Chocova Valencia" className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
                 <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="12" cy="12" r="4" />
@@ -39,7 +39,7 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/galerie" className="text-sm text-[#F5EBE6]/85 transition-colors hover:text-white">Galerie</Link>
+                <Link href="/galerie" className="text-sm text-[#F5EBE6]/85 transition-colors hover:text-white">Galería</Link>
               </li>
             </ul>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col justify-between gap-4 border-t border-[#F5EBE6]/10 pt-8 text-xs text-[#E2D7D5]/75 md:flex-row">
-          <p>© {new Date().getFullYear()} Sunny Cakes. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Chocova Valencia. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <Link href="/contact" className="hover:text-white">Allergènes</Link>
             <Link href="/contact" className="hover:text-white">Mentions légales</Link>

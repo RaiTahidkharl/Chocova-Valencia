@@ -1,15 +1,15 @@
 import type { CategoryTile, Product, Review } from "./types";
 
 export const SITE = {
-  name: "Sunny Cakes",
+  name: "Chocova Valencia",
   tagline: "Pâtisserie artisanale & gâteaux sur mesure",
-  address: "76T Rue du Quesnoy, 59300 Valenciennes, France",
-  phone: "+33 9 56 62 64 73",
-  email: "contact@sunnycakes.fr",
-  instagram: "https://www.instagram.com/sunny_cakes_va/",
-  ubereats: "https://www.ubereats.com/fr/store/sunny-cakes/TrS-pnpPWwC5XFgeBuUi0w?diningMode=PICKUP&rwg_token=AE37R_hc4LBYvDjxoRIt2NZZeIuit3QeKTtoh5M0-iBmG1ibf5-0jAa2G3_9SeRkQJRA1ic1JTq68TLqgqDoeQQYWBPqJg3ecn_oC_fsafWw-W265mTdtGc%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas&from_challenge=1",
+  address: "Carrer de Matias Perelló, 55, 46005 Valencia, España",
+  phone: "962 066 840",
+  email: "info@chocovavalencia.com",
+  instagram: "https://www.instagram.com/chocovavalencia/",
+  ubereats: "https://wa.me/34607232316",
   rating: 4.8,
-  reviewCount: 76,
+  reviewCount: 168,
   hours: "Ouvert · Ferme à 19h30",
 };
 

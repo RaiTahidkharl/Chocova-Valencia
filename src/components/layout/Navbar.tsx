@@ -25,7 +25,7 @@ export function Navbar() {
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-muted-pink bg-background-light/90 shadow-sm shadow-primary-text/10 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
           <Link href="/" className="font-serif text-xl text-primary-text md:text-2xl">
-            Sunny-cake
+            Chocova Valencia
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigation principale">
@@ -38,7 +38,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-3">
             <Button href="/gateaux-sur-mesure" className="hidden bg-primary-text text-white hover:bg-[#5B4A50] lg:inline-flex">
-              Commander
+              Diseña tu tarta
             </Button>
             <button
               type="button"
@@ -76,7 +76,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button href="/gateaux-sur-mesure" className="mt-2 w-full bg-primary-text text-white hover:bg-[#5B4A50]">
-                Commander
+                Diseña tu tarta
               </Button>
             </nav>
           </div>
