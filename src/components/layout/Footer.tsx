@@ -25,6 +25,23 @@ export function Footer() {
                   <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V10H8v3h2.4v8h3.1Z" />
                 </svg>
               </a>
+              <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" aria-label={`WhatsApp Chocova Valencia: ${SITE.whatsappDisplay}`} className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
+                <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.5Z" />
+                  <path d="M9 8.5c.3-.4.6-.4.9-.1l.7 1c.2.3.2.5 0 .8l-.5.6c.5 1 1.3 1.7 2.3 2.2l.6-.5c.3-.2.5-.2.8 0l1 .7c.3.2.3.6-.1.9-.4.4-.9.6-1.4.5-2.5-.5-4.5-2.5-5-5-.1-.5.1-1 .5-1.4Z" />
+                </svg>
+              </a>
+              <a href={`tel:${SITE.phone}`} aria-label={`Llamar a Chocova Valencia: ${SITE.phone}`} className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
+                <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M7 4.5 9.5 4l1.5 4-2 1.5a14 14 0 0 0 5.5 5.5l1.5-2 4 1.5-.5 2.5c-.2 1-1.1 1.7-2.1 1.6A14.5 14.5 0 0 1 5.4 6.6C5.3 5.6 6 4.7 7 4.5Z" />
+                </svg>
+              </a>
+              <a href={`mailto:${SITE.email}`} aria-label={`Enviar email a ${SITE.email}`} className="flex size-9 items-center justify-center rounded-full border border-[#F5EBE6]/40 text-[#F5EBE6] transition-colors hover:bg-[#FFF0F2] hover:text-[#3D3033]">
+                <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </a>
             </div>
           </div>
 

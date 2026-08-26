@@ -8,8 +8,8 @@ export function StoryTeaser() {
         <div className="grid overflow-hidden rounded-[24px] bg-[#FFF8FA] shadow-[0_10px_30px_rgba(0,0,0,0.04)] lg:grid-cols-2">
           <div className="relative aspect-[4/3] min-h-[300px] lg:min-h-[420px] lg:aspect-auto">
             <Image
-              src="/cakes/owner.jpg"
-              alt="La fundadora de Chocova Valencia presentando una creación personalizada"
+              src="/story-shop.jpg"
+              alt="Interior de la tienda Chocova Valencia"
               fill
               className="object-cover object-[58%_55%]"
               sizes="(max-width: 1024px) 100vw, 50vw"

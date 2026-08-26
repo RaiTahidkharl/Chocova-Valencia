@@ -22,8 +22,8 @@ export default function StoryPage() {
 
         <div className="relative aspect-video rounded-2xl overflow-hidden mt-10">
           <Image
-            src="/cakes/owner.jpg"
-            alt="Obrador de Chocova Valencia"
+            src="/story-shop.jpg"
+            alt="Interior de la tienda Chocova Valencia"
             fill
             className="object-cover"
             sizes="800px"
