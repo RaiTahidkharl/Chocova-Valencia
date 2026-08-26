@@ -10,8 +10,8 @@ export function FeaturedProducts() {
     <section className="bg-background-light py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Notre sélection"
-          subtitle="Les créations préférées de nos clients — pâtisseries fines et gâteaux d'exception."
+          title="Nuestra selección"
+          subtitle="Las creaciones favoritas de nuestros clientes: dulces selectos y tartas extraordinarias."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product) => (
@@ -20,7 +20,7 @@ export function FeaturedProducts() {
         </div>
         <div className="mt-10 text-center">
           <Button href="/boutique" variant="secondary">
-            Voir toute la boutique
+            Ver toda la tienda
           </Button>
         </div>
       </div>

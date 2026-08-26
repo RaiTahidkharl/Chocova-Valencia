@@ -8,8 +8,8 @@ export function CategoryGrid() {
     <section className="bg-[#FFF8FA] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Que recherchez-vous ?"
-          subtitle="Pâtisseries du jour, gâteaux prêts à commander ou créations entièrement personnalisées."
+          title="¿Qué te apetece hoy?"
+          subtitle="Dulces del día, tartas listas para encargar o creaciones totalmente personalizadas."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CATEGORY_TILES.map((cat) => (

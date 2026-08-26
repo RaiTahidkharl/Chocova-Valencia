@@ -29,7 +29,7 @@ export function Navbar() {
             Chocova Valencia
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigation principale">
+            <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegación principal">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm font-medium text-primary-text/85 transition-colors hover:text-primary-text">
                 {link.label}
@@ -45,7 +45,7 @@ export function Navbar() {
               type="button"
               className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-primary-text/20 bg-white text-primary-text transition-colors hover:bg-muted-pink"
               onClick={() => setBasketOpen(true)}
-              aria-label={`Basket, ${itemCount} item${itemCount === 1 ? "" : "s"}`}
+              aria-label={`Cesta, ${itemCount} producto${itemCount === 1 ? "" : "s"}`}
             >
               <BasketIcon />
               {itemCount > 0 && (
@@ -70,7 +70,7 @@ export function Navbar() {
 
         {open && (
           <div className="border-t border-muted-pink bg-background-light px-4 py-6 lg:hidden">
-            <nav className="flex flex-col gap-4" aria-label="Navigation mobile">
+            <nav className="flex flex-col gap-4" aria-label="Navegación móvil">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="py-2 text-lg font-medium text-primary-text">
                   {link.label}
@@ -94,14 +94,14 @@ export function Navbar() {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-muted-pink pb-5">
-              <h2 id="basket-title" className="font-serif text-2xl text-primary-text">Votre panier</h2>
-              <button type="button" onClick={() => setBasketOpen(false)} className="flex h-9 w-9 items-center justify-center rounded-full border border-muted-pink text-xl text-primary-text" aria-label="Fermer le panier">×</button>
+              <h2 id="basket-title" className="font-serif text-2xl text-primary-text">Tu cesta</h2>
+              <button type="button" onClick={() => setBasketOpen(false)} className="flex h-9 w-9 items-center justify-center rounded-full border border-muted-pink text-xl text-primary-text" aria-label="Cerrar la cesta">×</button>
             </div>
 
             {items.length === 0 ? (
               <div className="flex flex-1 flex-col items-center justify-center text-center text-primary-text/75">
                 <BasketIcon />
-                <p className="mt-4">Votre panier est vide.</p>
+                <p className="mt-4">Tu cesta está vacía.</p>
               </div>
             ) : (
               <div className="flex-1 divide-y divide-muted-pink overflow-y-auto">
@@ -109,9 +109,9 @@ export function Navbar() {
                   <div key={item.product.id} className="flex items-center justify-between gap-4 py-5 text-primary-text">
                     <div>
                       <p className="font-serif text-lg">{item.product.name}</p>
-                      <p className="mt-1 text-sm text-primary-text/70">Qté {item.quantity} · {item.product.price * item.quantity}€</p>
+                      <p className="mt-1 text-sm text-primary-text/70">Cantidad {item.quantity} · {item.product.price * item.quantity}€</p>
                     </div>
-                    <button type="button" onClick={() => removeFromCart(item.product.id)} className="text-sm font-semibold text-primary-text underline-offset-4 hover:underline">Retirer</button>
+                    <button type="button" onClick={() => removeFromCart(item.product.id)} className="text-sm font-semibold text-primary-text underline-offset-4 hover:underline">Eliminar</button>
                   </div>
                 ))}
               </div>
@@ -119,7 +119,7 @@ export function Navbar() {
 
             {!checkout ? <div className="border-t border-muted-pink pt-5">
               <div className="mb-4 flex items-center justify-between font-semibold text-primary-text">
-                <span>Total indicatif</span><span>{total.toFixed(2)}€</span>
+                <span>Total orientativo</span><span>{total.toFixed(2)}€</span>
               </div>
               <button
                 type="button"

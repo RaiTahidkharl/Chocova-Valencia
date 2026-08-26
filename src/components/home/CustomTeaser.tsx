@@ -7,23 +7,23 @@ import { useEffect, useState } from "react";
 const CAKE_CARDS = [
   {
     image: "/cakes/pink-ribbon.jpg",
-    alt: "Gâteau rose personnalisé avec rubans",
+    alt: "Tarta rosa personalizada con lazos",
   },
   {
     image: "/cakes/aperol-spritz.jpg",
-    alt: "Gâteau Aperol Spritz personnalisé",
+    alt: "Tarta personalizada Aperol Spritz",
   },
   {
     image: "/cakes/sunflower-celebration.jpg",
-    alt: "Gâteau de célébration aux tournesols",
+    alt: "Tarta de celebración con girasoles",
   },
 ];
 
 const FEATURES = [
-  "Anniversaire, mariage, baptême...",
-  "Parfums & thèmes personnalisés",
-  "Upload de photo de référence",
-  "Retrait ou livraison à Valenciennes",
+  "Cumpleaños, boda, bautizo...",
+  "Sabores y temas personalizados",
+  "Sube una foto de referencia",
+  "Recogida o entrega en Valencia",
 ];
 
 const POSITIONS = [
@@ -64,15 +64,15 @@ export function CustomTeaser() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-xl">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[2px] text-[#A85567]">
-            Sur mesure
+            Personalizada
           </p>
           <h2 className="font-serif text-4xl leading-tight text-[#332827] sm:text-5xl">
-            Votre gâteau, votre histoire
+            Tu tarta, tu historia
           </h2>
           <p className="mt-5 text-base leading-7 text-[#4A3E3D]">
-            Choisissez l&apos;occasion, les saveurs, les couleurs et la décoration.
-            Notre configurateur vous guide étape par étape — devis gratuit sous
-            24 heures.
+            Elige la ocasión, los sabores, los colores y la decoración. Nuestro
+            configurador te guía paso a paso: recibirás un presupuesto gratuito
+            en menos de 24 horas.
           </p>
 
           <ul className="mt-7 space-y-3 text-sm text-[#4A3E3D]">
@@ -93,13 +93,13 @@ export function CustomTeaser() {
             href="/gateaux-sur-mesure"
             className="mt-9 inline-flex rounded-full bg-[#332827] px-7 py-3.5 text-sm font-bold text-white shadow-sm transition-colors duration-300 hover:bg-[#593f3d] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#332827]"
           >
-            Créer mon gâteau
+            Crear mi tarta
           </Link>
         </div>
 
         <div
           className="relative mx-auto h-[330px] w-full max-w-[500px] [perspective:1000px] sm:h-[390px]"
-          aria-label="Exemples de gâteaux personnalisés"
+          aria-label="Ejemplos de tartas personalizadas"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}

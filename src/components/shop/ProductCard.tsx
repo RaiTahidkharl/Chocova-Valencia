@@ -8,7 +8,7 @@ import type { Product } from "@/lib/types";
 const BADGE_LABELS = {
   nouveau: "Nouveau",
   "best-seller": "Meilleure vente",
-  mariage: "Mariage",
+  mariage: "Boda",
 };
 
 interface ProductCardProps {
@@ -20,8 +20,8 @@ export function ProductCard({ product }: ProductCardProps) {
   const [customization, setCustomization] = useState("");
   const { addToCart } = useCart();
   const metadata = product.serves || product.leadTime
-    ? [product.serves ?? "Préparé avec soin", product.leadTime ? `Préparation : ${product.leadTime}` : "Prêt à retirer"].join(" · ")
-    : "Disponible à retirer immédiatement";
+    ? [product.serves ?? "Preparado con mimo", product.leadTime ? `Preparación: ${product.leadTime}` : "Listo para recoger"].join(" · ")
+    : "Disponible para recoger ahora";
 
   const openQuickView = () => setIsQuickViewOpen(true);
 
@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
         }}
         role="button"
         tabIndex={0}
-        aria-label={`Aperçu rapide : ${product.name}`}
+        aria-label={`Vista rápida: ${product.name}`}
       >
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted-pink">
           <Image
@@ -87,7 +87,7 @@ export function ProductCard({ product }: ProductCardProps) {
             }}
             className="mt-auto inline-flex min-h-11 items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:scale-[1.02] hover:bg-[#5B4A50] active:scale-[0.98]"
           >
-            Ajouter à la commande
+            Añadir al pedido
           </button>
         </div>
       </article>
@@ -105,7 +105,7 @@ export function ProductCard({ product }: ProductCardProps) {
               type="button"
               className="absolute right-6 top-6 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background-light/90 text-xl text-primary-text"
               onClick={() => setIsQuickViewOpen(false)}
-              aria-label="Fermer l’aperçu rapide"
+              aria-label="Cerrar la vista rápida"
             >
               ×
             </button>
@@ -131,7 +131,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 }}
                 className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white hover:bg-[#5B4A50]"
               >
-                Ajouter à la commande
+                Añadir al pedido
               </button>
             </div>
           </div>

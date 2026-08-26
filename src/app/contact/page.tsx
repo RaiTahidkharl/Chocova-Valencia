@@ -4,7 +4,7 @@ import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contactez Sunny Cakes à Valenciennes.",
+  description: "Contacta con Chocova Valencia en Valencia.",
 };
 
 export default function ContactPage() {
@@ -16,14 +16,14 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl text-chocolate">Contact</h1>
           <p className="mt-3 text-muted">
-            Une question, une commande spéciale ? Écrivez-nous ou passez en
-            boutique.
+            ¿Tienes una pregunta o un encargo especial? Escríbenos o visítanos
+            en la tienda.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="bg-chocolate text-[#F5EBE6] rounded-2xl p-8 md:p-10">
-            <h2 className="font-serif text-2xl mb-6">Nous trouver</h2>
+            <h2 className="font-serif text-2xl mb-6">Dónde estamos</h2>
             <address className="not-italic space-y-3 text-sm text-[#F5EBE6]">
               <p>{SITE.address}</p>
               <p>{SITE.hours}</p>
@@ -43,13 +43,13 @@ export default function ContactPage() {
                 href={mapsUrl}
                 className="bg-[#FFF0F2] text-[#332827] hover:bg-white"
               >
-                Itinéraire Google Maps
+                Cómo llegar con Google Maps
               </Button>
             </div>
             <div className="mt-8 rounded-xl overflow-hidden h-48">
               <iframe
-                title="Carte Sunny Cakes"
-                src="https://maps.google.com/maps?q=76T+Rue+du+Quesnoy+59300+Valenciennes&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Mapa de Chocova Valencia"
+                src="https://maps.google.com/maps?q=Carrer+de+Matias+Perell%C3%B3+55+46005+Valencia&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
               />
@@ -58,47 +58,47 @@ export default function ContactPage() {
 
           <form className="bg-white rounded-2xl border border-border p-8 md:p-10">
             <h2 className="font-serif text-2xl text-chocolate mb-6">
-              Envoyer un message
+              Enviar un mensaje
             </h2>
             <div className="space-y-4">
               <input
                 type="text"
                 name="name"
-                placeholder="Nom *"
+                placeholder="Nombre *"
                 required
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               />
               <input
                 type="email"
                 name="email"
-                placeholder="E-mail *"
+                placeholder="Correo electrónico *"
                 required
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               />
               <input
                 type="tel"
                 name="phone"
-                placeholder="Téléphone (optionnel)"
+                placeholder="Teléfono (opcional)"
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               />
               <textarea
                 name="message"
-                placeholder="Votre message *"
+                placeholder="Tu mensaje *"
                 required
                 rows={5}
                 className="w-full p-3 rounded-lg border border-border bg-cream resize-none"
               />
               <Button type="submit" className="w-full">
-                Envoyer
+                Enviar
               </Button>
             </div>
             <p className="mt-4 text-xs text-muted">
-              Pour une commande de gâteau sur mesure, utilisez le{" "}
+              Para encargar una tarta personalizada, utiliza el{" "}
               <a
                 href="/gateaux-sur-mesure"
                 className="text-caramel hover:underline"
               >
-                configurateur
+                configurador
               </a>{" "}
               pour un devis plus précis.
             </p>

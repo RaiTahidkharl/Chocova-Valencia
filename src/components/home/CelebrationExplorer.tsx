@@ -9,7 +9,7 @@ const CELEBRATIONS = [
   { title: "Birthday Cakes", text: "A cake designed around the person, theme and moment being celebrated.", image: "/cakes/birthday-crown.jpg" },
   { title: "Baptism Cakes", text: "Delicate, personalised cakes for a meaningful family celebration.", image: "/cakes/balloon-baptism.jpg" },
   { title: "Communion Cakes", text: "Thoughtful cake designs for communion celebrations and family gatherings.", image: "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg" },
-  { title: "Corporate Event Cakes", text: "Custom sweet creations for company events and special occasions.", image: "/cakes/celebration-artist.jpg" },
+  { title: "Tartas para empresas", text: "Creaciones dulces a medida para eventos de empresa y ocasiones especiales.", image: "/cakes/celebration-artist.jpg" },
 ] as const;
 
 export function CelebrationExplorer() {
@@ -26,7 +26,7 @@ export function CelebrationExplorer() {
       <div className="mx-auto max-w-2xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[.2em] text-accent-pink">Celebrations</p>
         <h1 className="mt-3 font-serif text-4xl text-primary-text md:text-5xl">Moments made memorable</h1>
-        <p className="mt-4 text-primary-text/75">Choose an occasion to discover the kind of personalised creation Chocova can prepare for your celebration.</p>
+        <p className="mt-4 text-primary-text/75">Elige una ocasión y descubre la creación personalizada que Chocova puede preparar para tu celebración.</p>
       </div>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

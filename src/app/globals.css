@@ -9,7 +9,7 @@
   --white: #FFFFFF;
   --black: #000000;
   --cream: var(--background-light);
-  --sunny: var(--accent-pink);
+  --chocova: var(--accent-pink);
   --pink: var(--accent-pink);
   --caramel: #B06F87;
   --chocolate: var(--primary-text);
@@ -26,7 +26,7 @@
   --color-white: var(--white);
   --color-black: var(--black);
   --color-cream: var(--cream);
-  --color-sunny: var(--sunny);
+  --color-chocova: var(--chocova);
   --color-pink: var(--pink);
   --color-caramel: var(--caramel);
   --color-chocolate: var(--chocolate);
@@ -47,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: var(--sunny);
+  background: var(--chocova);
   color: var(--chocolate);
 }
 

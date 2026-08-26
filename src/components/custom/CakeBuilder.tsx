@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/Button";
 import type { CakeBuilderData } from "@/lib/types";
 
 const STEPS = [
-  "Occasion",
-  "Convives",
-  "Taille",
-  "Saveurs",
-  "Style",
-  "Date",
-  "Contact",
+  "Ocasión",
+  "Personas",
+  "Tamaño",
+  "Sabores",
+  "Estilo",
+  "Fecha",
+  "Contacto",
 ];
 
 const INITIAL: CakeBuilderData = {
@@ -55,14 +55,14 @@ export function CakeBuilder() {
       <div className="bg-white rounded-2xl border border-border p-8 md:p-12 text-center max-w-2xl mx-auto">
         <div className="text-4xl mb-4">✓</div>
         <h2 className="font-serif text-2xl text-chocolate">
-          Demande envoyée !
+          ¡Solicitud enviada!
         </h2>
         <p className="mt-3 text-muted">
-          Merci {data.name}. Nous vous enverrons un devis personnalisé sous 24
-          heures à {data.email}.
+          Gracias, {data.name}. Te enviaremos un presupuesto personalizado en
+          menos de 24 horas a {data.email}.
         </p>
         <Button href="/" className="mt-8">
-          Retour à l&apos;accueil
+          Volver al inicio
         </Button>
       </div>
     );
@@ -93,15 +93,15 @@ export function CakeBuilder() {
         {step === 0 && (
           <fieldset>
             <legend className="font-serif text-2xl text-chocolate mb-6">
-              Quelle est l&apos;occasion ?
+              ¿Cuál es la ocasión?
             </legend>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "Anniversaire",
-                "Mariage",
-                "Baptême",
-                "Entreprise",
-                "Autre",
+                "Cumpleaños",
+                "Boda",
+                "Bautizo",
+                "Empresa",
+                "Otra",
               ].map((o) => (
                 <label
                   key={o}
@@ -125,7 +125,7 @@ export function CakeBuilder() {
         {step === 1 && (
           <fieldset>
             <legend className="font-serif text-2xl text-chocolate mb-6">
-              Nombre de convives
+              Número de personas
             </legend>
             <input
               type="range"
@@ -136,7 +136,7 @@ export function CakeBuilder() {
               className="w-full accent-caramel"
             />
             <p className="mt-4 text-center font-serif text-3xl text-chocolate">
-              {data.guests} personnes
+              {data.guests} personas
             </p>
           </fieldset>
         )}
@@ -144,15 +144,15 @@ export function CakeBuilder() {
         {step === 2 && (
           <fieldset>
             <legend className="font-serif text-2xl text-chocolate mb-6">
-              Taille du gâteau
+              Tamaño de la tarta
             </legend>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "Individuel",
-                "15 cm (6-8 parts)",
-                "20 cm (10-12 parts)",
-                "25 cm (15-20 parts)",
-                "Pièce montée (étages)",
+                "Individual",
+                "15 cm (6-8 porciones)",
+                "20 cm (10-12 porciones)",
+                "25 cm (15-20 porciones)",
+                "Tarta de varios pisos",
               ].map((s) => (
                 <label
                   key={s}
@@ -176,37 +176,37 @@ export function CakeBuilder() {
         {step === 3 && (
           <fieldset className="space-y-6">
             <legend className="font-serif text-2xl text-chocolate mb-6 block">
-              Saveurs & garniture
+              Sabores y relleno
             </legend>
             <div>
-              <label className="block text-sm font-medium mb-2">Parfum</label>
+              <label className="block text-sm font-medium mb-2">Sabor</label>
               <select
                 value={data.flavor}
                 onChange={(e) => update("flavor", e.target.value)}
                 className="w-full p-3 rounded-lg border border-border bg-cream"
                 required
               >
-                <option value="">Choisir...</option>
-                <option value="vanille">Vanille</option>
-                <option value="chocolat">Chocolat</option>
-                <option value="fruits-rouges">Fruits rouges</option>
+                <option value="">Elegir...</option>
+                <option value="vanille">Vainilla</option>
+                <option value="chocolat">Chocolate</option>
+                <option value="fruits-rouges">Frutos rojos</option>
                 <option value="pistache">Pistache</option>
                 <option value="citron">Citron</option>
-                <option value="caramel">Caramel beurre salé</option>
+                <option value="caramel">Caramelo salado</option>
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Garniture</label>
+              <label className="block text-sm font-medium mb-2">Relleno</label>
               <select
                 value={data.filling}
                 onChange={(e) => update("filling", e.target.value)}
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               >
-                <option value="">Choisir...</option>
-                <option value="creme">Crème légère</option>
+                <option value="">Elegir...</option>
+                <option value="creme">Crema ligera</option>
                 <option value="mousse">Mousse</option>
-                <option value="confiture">Confiture maison</option>
-                <option value="ganache">Ganache chocolat</option>
+                <option value="confiture">Mermelada casera</option>
+                <option value="ganache">Ganache de chocolate</option>
               </select>
             </div>
           </fieldset>
@@ -215,18 +215,18 @@ export function CakeBuilder() {
         {step === 4 && (
           <fieldset className="space-y-4">
             <legend className="font-serif text-2xl text-chocolate mb-6 block">
-              Style & décoration
+              Estilo y decoración
             </legend>
             <input
               type="text"
-              placeholder="Thème (ex: princesse, floral, minimaliste...)"
+              placeholder="Tema (ej.: princesa, floral, minimalista...)"
               value={data.theme}
               onChange={(e) => update("theme", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
             />
             <input
               type="text"
-              placeholder="Couleurs souhaitées"
+              placeholder="Colores deseados"
               value={data.colors}
               onChange={(e) => update("colors", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
@@ -236,20 +236,20 @@ export function CakeBuilder() {
               onChange={(e) => update("decoration", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
             >
-              <option value="">Niveau de décoration</option>
-              <option value="simple">Simple & élégant</option>
-              <option value="medium">Décoré</option>
-              <option value="elaborate">Très élaboré</option>
+              <option value="">Nivel de decoración</option>
+              <option value="simple">Sencillo y elegante</option>
+              <option value="medium">Decorado</option>
+              <option value="elaborate">Muy elaborado</option>
             </select>
             <input
               type="text"
-              placeholder="Message sur le gâteau (optionnel)"
+              placeholder="Mensaje en la tarta (opcional)"
               value={data.message}
               onChange={(e) => update("message", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
             />
             <textarea
-              placeholder="Exigences particulières, allergies..."
+              placeholder="Necesidades especiales, alergias..."
               value={data.requirements}
               onChange={(e) => update("requirements", e.target.value)}
               rows={3}
@@ -261,11 +261,11 @@ export function CakeBuilder() {
         {step === 5 && (
           <fieldset className="space-y-4">
             <legend className="font-serif text-2xl text-chocolate mb-6 block">
-              Date & livraison
+              Fecha y entrega
             </legend>
             <div>
               <label className="block text-sm font-medium mb-2">
-                Date souhaitée *
+                Fecha deseada *
               </label>
               <input
                 type="date"
@@ -275,15 +275,15 @@ export function CakeBuilder() {
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               />
               <p className="mt-1 text-xs text-muted">
-                Prévoir minimum 5 jours ouvrés pour les gâteaux sur mesure.
+                Cuenta con un mínimo de 5 días laborables para tartas personalizadas.
               </p>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Mode</label>
+              <label className="block text-sm font-medium mb-2">Modalidad</label>
               <div className="flex gap-4">
                 {[
-                  { value: "pickup", label: "Retrait boutique" },
-                  { value: "delivery", label: "Livraison" },
+                  { value: "pickup", label: "Recogida en tienda" },
+                  { value: "delivery", label: "Entrega" },
                 ].map((opt) => (
                   <label
                     key={opt.value}
@@ -304,18 +304,18 @@ export function CakeBuilder() {
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">
-                Budget indicatif
+                Presupuesto orientativo
               </label>
               <select
                 value={data.budget}
                 onChange={(e) => update("budget", e.target.value)}
                 className="w-full p-3 rounded-lg border border-border bg-cream"
               >
-                <option value="">Choisir...</option>
+                <option value="">Elegir...</option>
                 <option value="50-80">50 – 80 €</option>
                 <option value="80-120">80 – 120 €</option>
                 <option value="120-200">120 – 200 €</option>
-                <option value="200+">200 € et plus</option>
+                <option value="200+">200 € o más</option>
               </select>
             </div>
           </fieldset>
@@ -324,11 +324,11 @@ export function CakeBuilder() {
         {step === 6 && (
           <fieldset className="space-y-4">
             <legend className="font-serif text-2xl text-chocolate mb-6 block">
-              Vos coordonnées
+              Tus datos de contacto
             </legend>
             <input
               type="text"
-              placeholder="Nom *"
+              placeholder="Nombre *"
               value={data.name}
               onChange={(e) => update("name", e.target.value)}
               required
@@ -336,7 +336,7 @@ export function CakeBuilder() {
             />
             <input
               type="email"
-              placeholder="E-mail *"
+              placeholder="Correo electrónico *"
               value={data.email}
               onChange={(e) => update("email", e.target.value)}
               required
@@ -344,18 +344,18 @@ export function CakeBuilder() {
             />
             <input
               type="tel"
-              placeholder="Téléphone"
+              placeholder="Teléfono"
               value={data.phone}
               onChange={(e) => update("phone", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
             />
             <div className="mt-4 p-4 bg-cream rounded-lg text-sm text-muted">
-              <p className="font-medium text-chocolate mb-2">Récapitulatif</p>
+              <p className="font-medium text-chocolate mb-2">Resumen</p>
               <p>
-                {data.occasion} · {data.guests} convives · {data.size || "—"}
+                {data.occasion} · {data.guests} personas · {data.size || "-"}
               </p>
               <p>
-                {data.flavor} / {data.filling || "—"} · {data.date || "—"}
+                {data.flavor} / {data.filling || "-"} · {data.date || "-"}
               </p>
             </div>
           </fieldset>
@@ -364,7 +364,7 @@ export function CakeBuilder() {
         <div className="mt-8 flex justify-between gap-4">
           {step > 0 ? (
             <Button type="button" variant="secondary" onClick={back}>
-              Retour
+              Atrás
             </Button>
           ) : (
             <span />
@@ -375,10 +375,10 @@ export function CakeBuilder() {
               onClick={next}
               disabled={step === 0 && !data.occasion}
             >
-              Continuer
+              Continuar
             </Button>
           ) : (
-            <Button type="submit">Recevoir mon devis</Button>
+            <Button type="submit">Recibir mi presupuesto</Button>
           )}
         </div>
       </div>

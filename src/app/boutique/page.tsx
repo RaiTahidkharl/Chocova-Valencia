@@ -7,7 +7,7 @@ import { PRODUCTS } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Boutique",
   description:
-    "Découvrez nos pâtisseries artisanales et gâteaux à Valenciennes.",
+    "Descubre nuestros dulces artesanales y tartas en Valencia.",
 };
 
 export default function BoutiquePage() {
@@ -15,19 +15,19 @@ export default function BoutiquePage() {
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="La boutique"
-          subtitle="Pâtisseries du jour, gâteaux prêts à commander et créations saisonnières."
+          title="La tienda"
+          subtitle="Dulces del día, tartas listas para encargar y creaciones de temporada."
         />
 
         <div className="flex flex-wrap gap-3 mb-10 justify-center">
           <Button href="/boutique/patisseries" variant="secondary">
-            Pâtisseries
+            Pastelería
           </Button>
           <Button href="/boutique/gateaux" variant="secondary">
-            Gâteaux
+            Tartas
           </Button>
           <Button href="/gateaux-sur-mesure" className="bg-primary-text text-white hover:bg-[#5B4A50]">
-            Sur mesure
+            Personalizadas
           </Button>
         </div>
 

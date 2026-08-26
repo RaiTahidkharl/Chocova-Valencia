@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Pâtisserie artisanale et gâteaux sur mesure à Valenciennes. Pâtisseries fines, gâteaux d'anniversaire, mariages et créations personnalisées.",
+    "Pastelería artesanal y tartas personalizadas en Valencia. Dulces selectos, tartas de cumpleaños, bodas y creaciones hechas a medida.",
   openGraph: {
     title: SITE.name,
     description: SITE.tagline,

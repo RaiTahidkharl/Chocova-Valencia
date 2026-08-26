@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Chocova Valencia
 
-Site web pour **Chocova Valencia** — pâtisserie artisanale & gâteaux sur mesure à Valenciennes.
+Sitio web de **Chocova Valencia**, pastelería artesanal y tartas personalizadas en Valencia.
 
 ## Stack
 
@@ -11,19 +10,19 @@ Site web pour **Chocova Valencia** — pâtisserie artisanale & gâteaux sur mes
 
 ## Pages
 
-| Route | Description |
+| Ruta | Descripción |
 |-------|-------------|
-| `/` | Accueil (hero, catégories, sélection, avis, Instagram, contact) |
-| `/boutique` | Catalogue complet |
-| `/boutique/patisseries` | Pâtisseries |
-| `/boutique/gateaux` | Gâteaux prêts à commander |
-| `/gateaux-sur-mesure` | Configurateur multi-étapes (devis) |
-| `/mariage` | Gâteaux de mariage + galerie |
-| `/notre-histoire` | Brand story |
-| `/contact` | Formulaire + carte |
-| `/galerie` | Galerie photos |
+| `/` | Inicio (hero, categorías, selección, reseñas, Instagram y contacto) |
+| `/boutique` | Catálogo completo |
+| `/boutique/patisseries` | Pastelería |
+| `/boutique/gateaux` | Tartas listas para encargar |
+| `/gateaux-sur-mesure` | Configurador por pasos (presupuesto) |
+| `/mariage` | Tartas para celebraciones y galería |
+| `/notre-histoire` | Nuestra historia |
+| `/contact` | Formulario y mapa |
+| `/galerie` | Galería de fotos |
 
-## Développement
+## Desarrollo
 
 ```bash
 npm install
@@ -32,24 +31,21 @@ npm run dev
 
 Ouvrir [http://localhost:3000](http://localhost:3000).
 
-## Production
+## Producción
 
 ```bash
 npm run build
 npm start
 ```
 
-## Design system
+## Sistema de diseño
 
-- **Couleurs :** Cream `#FAF6F0`, Chocova Valencia `#F4C542`, Caramel `#C4956A`, Chocolate `#3D2B1F`
-- **Typographie :** Playfair Display (titres), Source Sans 3 (corps)
+- **Colores:** Cream `#FAF6F0`, Chocova Valencia `#F4C542`, Caramel `#C4956A`, Chocolate `#3D2B1F`
+- **Tipografía:** Playfair Display (títulos), Source Sans 3 (texto)
 
-## Prochaines étapes
+## Próximos pasos
 
-- Remplacer les photos Unsplash par vos propres visuels
-- Brancher le formulaire / configurateur à un backend (email, CRM)
-- Ajouter panier + paiement Stripe pour pâtisseries
-- Mettre à jour les liens Instagram et Uber Eats réels
-=======
-# Chocova Valencia-cake
->>>>>>> b66ce3b0d5130aea90baa81a7a5c3253b35b60e9
+- Sustituir las fotos de Unsplash por imágenes propias
+- Conectar el formulario y el configurador a un backend (correo, CRM)
+- Añadir cesta y pagos con Stripe para los dulces
+- Actualizar los enlaces reales de Instagram y Uber Eats

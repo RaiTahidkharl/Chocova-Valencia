@@ -4,8 +4,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { INSTAGRAM_POSTS, PRODUCTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Galerie",
-  description: "Galerie photos — créations Sunny Cakes à Valenciennes.",
+  title: "Galería",
+  description: "Galería de fotos: creaciones de Chocova Valencia.",
 };
 
 const GALLERY_IMAGES = [
@@ -18,8 +18,8 @@ export default function GaleriePage() {
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Galerie"
-          subtitle="Nos créations — gâteaux sur mesure, pâtisseries et pièces montées."
+          title="Galería"
+          subtitle="Nuestras creaciones: tartas personalizadas, dulces y tartas de varios pisos."
         />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {GALLERY_IMAGES.map((item) => (

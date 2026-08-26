@@ -36,7 +36,7 @@ export function ReviewsSection() {
             Ce que disent nos clients
           </h2>
           <p className="mt-3 text-primary-text/75">
-            4.8 sur 5 · 76 avis Google · Valenciennes
+            4,8 sobre 5 · 168 reseñas en Google · Valencia
           </p>
         </div>
       </div>

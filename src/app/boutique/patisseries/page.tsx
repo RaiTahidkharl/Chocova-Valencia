@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { getProductsByCategory } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pâtisseries",
-  description: "Pâtisseries artisanales et viennoiseries à Valenciennes.",
+  title: "Pastelería",
+  description: "Dulces artesanales y bollería en Valencia.",
 };
 
 export default function PatisseriesPage() {
@@ -16,12 +16,12 @@ export default function PatisseriesPage() {
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Pâtisseries"
-          subtitle="Viennoiseries, entremets individuels et douceurs préparées chaque jour."
+          title="Pastelería"
+          subtitle="Bollería, postres individuales y dulces preparados cada día."
         />
         <div className="mb-8">
           <Button href="/boutique" variant="ghost">
-            ← Toute la boutique
+            ← Toda la tienda
           </Button>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

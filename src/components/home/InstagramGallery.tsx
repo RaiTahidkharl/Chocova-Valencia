@@ -18,7 +18,7 @@ export function InstagramGallery() {
     <section className="bg-[#FFF8FA] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <header className="relative mb-10 text-center md:mb-12">
-          <h2 className="font-serif text-3xl text-primary-text md:text-5xl">Suivez-nous sur Instagram</h2>
+          <h2 className="font-serif text-3xl text-primary-text md:text-5xl">Síguenos en Instagram</h2>
           <a
             href={SITE.instagram}
             target="_blank"
@@ -41,7 +41,7 @@ export function InstagramGallery() {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-2xl bg-muted-pink shadow-sm shadow-primary-text/10"
-              aria-label={`Voir ${post.alt} sur Instagram`}
+              aria-label={`Ver ${post.alt} en Instagram`}
             >
               <Image
                 src={post.image}
@@ -52,7 +52,7 @@ export function InstagramGallery() {
               />
               <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-t from-primary-text/65 via-primary-text/25 to-primary-text/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <InstagramIcon className="h-8 w-8 text-white" />
-                <span className="text-sm font-semibold text-white underline underline-offset-4">Voir la publication</span>
+                <span className="text-sm font-semibold text-white underline underline-offset-4">Ver publicación</span>
               </span>
             </a>
           ))}

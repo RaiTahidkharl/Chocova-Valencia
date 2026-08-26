@@ -11,11 +11,11 @@ export function VisitSection() {
           <div className="grid lg:grid-cols-2">
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <h2 className="font-serif text-3xl md:text-4xl">
-                Venez nous rendre visite
+                Ven a visitarnos
               </h2>
               <p className="mt-4 leading-relaxed text-[#F5EBE6]/90">
-                Retrait sur place à notre boutique de Valenciennes. Commandez
-                aussi via Uber Eats pour une livraison à domicile.
+                Recoge tu pedido en nuestra tienda de Valencia o encárgalo a
+                través de Uber Eats para recibirlo en casa.
               </p>
               <address className="mt-6 text-sm leading-relaxed not-italic text-[#F5EBE6]">
                 {SITE.address}
@@ -31,7 +31,7 @@ export function VisitSection() {
                   href={mapsUrl}
                   className="bg-[#EFA6B9] text-[#332827] shadow-sm hover:bg-[#F5B9C8]"
                 >
-                  Itinéraire
+                  Cómo llegar
                 </Button>
                <Button 
   href={SITE.ubereats} 
