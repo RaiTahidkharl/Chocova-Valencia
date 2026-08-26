@@ -13,7 +13,7 @@ const CELEBRATIONS = [
 ] as const;
 
 export function CelebrationExplorer() {
-  const [selected, setSelected] = useState(CELEBRATIONS[0]);
+  const [selected, setSelected] = useState<(typeof CELEBRATIONS)[number]>(CELEBRATIONS[0]);
   const detailsRef = useRef<HTMLDivElement>(null);
 
   function selectCelebration(celebration: (typeof CELEBRATIONS)[number]) {
