@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { Button } from "@/components/ui/Button";
-import { getProductsByCategory } from "@/lib/data";
+import { getProductsByCategories } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pastelería",
-  description: "Dulces artesanales y bollería en Valencia.",
+  title: "Repostería",
+  description: "Donuts rellenos, brownies, muffins, cupcakes y cookies en Valencia.",
 };
 
 export default function PatisseriesPage() {
-  const products = getProductsByCategory("patisseries");
+  const products = getProductsByCategories(["donuts-rellenos", "brownies", "muffins", "cupcakes", "cookies"]);
 
   return (
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Pastelería"
-          subtitle="Bollería, postres individuales y dulces preparados cada día."
+          title="Repostería"
+          subtitle="Donuts rellenos, brownies, muffins, cupcakes y cookies para disfrutar cada día."
         />
         <div className="mb-8">
           <Button href="/boutique" variant="ghost">

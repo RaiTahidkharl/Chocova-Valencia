@@ -4,7 +4,7 @@ const TRUST_ITEMS = [
   { icon: "star", label: `${SITE.rating}/5 · ${SITE.reviewCount} avis` },
   { icon: "pin", label: "Recogida en tienda" },
   { icon: "truck", label: "Entrega local" },
-  { icon: "bag", label: "Uber Eats" },
+  { icon: "bag", label: "Pedidos por WhatsApp" },
 ] as const;
 
 function TrustIcon({ name }: { name: (typeof TRUST_ITEMS)[number]["icon"] }) {

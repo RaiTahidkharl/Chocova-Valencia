@@ -22,7 +22,7 @@ export default function StoryPage() {
 
         <div className="relative aspect-video rounded-2xl overflow-hidden mt-10">
           <Image
-            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=900&q=80"
+            src="/cakes/owner.jpg"
             alt="Obrador de Chocova Valencia"
             fill
             className="object-cover"
@@ -34,8 +34,8 @@ export default function StoryPage() {
           <p>
             Chocova Valencia nació de una pasión por la pastelería y los
             sabores del mundo. En el corazón de Valencia, nuestra tienda recibe
-            cada día a quienes buscan dulces auténticos, desde el croissant de
-            la mañana hasta la tarta nupcial más especial.
+            cada día a quienes buscan dulces auténticos, desde el primer dulce
+            de la mañana hasta la tarta nupcial más especial.
           </p>
           <p>
             Combinamos técnicas artesanales e inspiración internacional: khachapuri

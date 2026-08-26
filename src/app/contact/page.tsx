@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { SITE } from "@/lib/data";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -27,6 +28,7 @@ export default function ContactPage() {
             <address className="not-italic space-y-3 text-sm text-[#F5EBE6]">
               <p>{SITE.address}</p>
               <p>{SITE.hours}</p>
+              <p>WhatsApp: <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">{SITE.whatsappDisplay}</a></p>
               <p>
                 <a href={`tel:${SITE.phone}`} className="transition-colors hover:text-white">
                   {SITE.phone}
@@ -56,53 +58,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="bg-white rounded-2xl border border-border p-8 md:p-10">
-            <h2 className="font-serif text-2xl text-chocolate mb-6">
-              Enviar un mensaje
-            </h2>
-            <div className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre *"
-                required
-                className="w-full p-3 rounded-lg border border-border bg-cream"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Correo electrónico *"
-                required
-                className="w-full p-3 rounded-lg border border-border bg-cream"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Teléfono (opcional)"
-                className="w-full p-3 rounded-lg border border-border bg-cream"
-              />
-              <textarea
-                name="message"
-                placeholder="Tu mensaje *"
-                required
-                rows={5}
-                className="w-full p-3 rounded-lg border border-border bg-cream resize-none"
-              />
-              <Button type="submit" className="w-full">
-                Enviar
-              </Button>
-            </div>
-            <p className="mt-4 text-xs text-muted">
-              Para encargar una tarta personalizada, utiliza el{" "}
-              <a
-                href="/gateaux-sur-mesure"
-                className="text-caramel hover:underline"
-              >
-                configurador
-              </a>{" "}
-              pour un devis plus précis.
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </div>

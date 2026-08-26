@@ -2,7 +2,23 @@ import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { Button } from "@/components/ui/Button";
-import { PRODUCTS } from "@/lib/data";
+import { getProductsByCategories } from "@/lib/data";
+import type { ProductCategory } from "@/lib/types";
+
+const CATALOG_GROUPS: { title: string; categories: ProductCategory[] }[] = [
+  {
+    title: "Tartas",
+    categories: ["tartas-especiales", "tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"],
+  },
+  {
+    title: "Repostería",
+    categories: ["donuts-rellenos", "brownies", "muffins", "cupcakes", "cookies"],
+  },
+  {
+    title: "Eventos",
+    categories: ["mesas-dulces", "cumpleanos", "bautizos", "comuniones", "bodas", "eventos-corporativos"],
+  },
+];
 
 export const metadata: Metadata = {
   title: "Boutique",
@@ -31,13 +47,22 @@ export default function BoutiquePage() {
           </Button>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {PRODUCTS.map((product) => (
-            <div key={product.id} id={product.id}>
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
+        {CATALOG_GROUPS.map((group) => {
+          const products = getProductsByCategories(group.categories);
+
+          return (
+            <section key={group.title} className="mb-14 last:mb-0">
+              <h2 className="mb-6 font-serif text-3xl text-primary-text">{group.title}</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {products.map((product) => (
+                  <div key={product.id} id={product.id}>
+                    <ProductCard product={product} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   );

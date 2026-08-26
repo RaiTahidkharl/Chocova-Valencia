@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { NAV_LINKS } from "@/lib/data";
+import { NAV_LINKS, SITE } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/components/cart/CartProvider";
 
@@ -18,8 +18,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [basketOpen, setBasketOpen] = useState(false);
   const [checkout, setCheckout] = useState(false);
-  const { items, itemCount, removeFromCart } = useCart();
-  const total = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  const { items, itemCount, updateQuantity, removeFromCart } = useCart();
+  const hasKnownPrices = items.every((item) => item.product.price !== undefined);
+  const total = items.reduce((sum, item) => sum + (item.product.price ?? 0) * item.quantity, 0);
 
   return (
     <>
@@ -106,12 +107,18 @@ export function Navbar() {
             ) : (
               <div className="flex-1 divide-y divide-muted-pink overflow-y-auto">
                 {items.map((item) => (
-                  <div key={item.product.id} className="flex items-center justify-between gap-4 py-5 text-primary-text">
+                    <div key={item.product.id} className="flex items-center justify-between gap-4 py-5 text-primary-text">
                     <div>
                       <p className="font-serif text-lg">{item.product.name}</p>
-                      <p className="mt-1 text-sm text-primary-text/70">Cantidad {item.quantity} · {item.product.price * item.quantity}€</p>
+                      <p className="mt-1 text-sm text-primary-text/70">Cantidad {item.quantity} · {item.product.price !== undefined ? `${item.product.price * item.quantity}€` : "Consultar"}</p>
+                        {item.customization && <p className="mt-1 text-xs text-primary-text/70">Nota: {item.customization}</p>}
                     </div>
-                    <button type="button" onClick={() => removeFromCart(item.product.id)} className="text-sm font-semibold text-primary-text underline-offset-4 hover:underline">Eliminar</button>
+                    <div className="flex shrink-0 items-center gap-2">
+                      <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-muted-pink text-lg" aria-label={`Reducir cantidad de ${item.product.name}`}>−</button>
+                      <span className="min-w-5 text-center text-sm">{item.quantity}</span>
+                      <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-muted-pink text-lg" aria-label={`Aumentar cantidad de ${item.product.name}`}>+</button>
+                      <button type="button" onClick={() => removeFromCart(item.product.id)} className="ml-1 text-sm font-semibold text-primary-text underline-offset-4 hover:underline">Eliminar</button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -119,7 +126,7 @@ export function Navbar() {
 
             {!checkout ? <div className="border-t border-muted-pink pt-5">
               <div className="mb-4 flex items-center justify-between font-semibold text-primary-text">
-                <span>Total orientativo</span><span>{total.toFixed(2)}€</span>
+                <span>Total orientativo</span><span>{hasKnownPrices ? `${total.toFixed(2)}€` : "Consultar"}</span>
               </div>
               <button
                 type="button"
@@ -128,18 +135,28 @@ export function Navbar() {
               >
                 Continuar con mis datos
               </button>
-            </div> : <form className="border-t border-muted-pink pt-5" onSubmit={(event) => {
+            </div> : <form data-cart-checkout className="border-t border-muted-pink pt-5" onSubmit={(event) => {
               event.preventDefault();
               const form = new FormData(event.currentTarget);
               const summary = items.map((item) => `• ${item.quantity}× ${item.product.name}${item.customization ? ` (${item.customization})` : ""}`).join("%0A");
               const name = encodeURIComponent(String(form.get("name") || ""));
               const phone = encodeURIComponent(String(form.get("phone") || ""));
-              window.open(`https://wa.me/34607232316?text=Hola%2C%20quiero%20solicitar%20este%20pedido%3A%0A${summary}%0A%0ANombre%3A%20${name}%0ATel%C3%A9fono%3A%20${phone}`, "_blank");
+              const email = encodeURIComponent(String(form.get("email") || ""));
+              const message = `Hola Chocova, quiero solicitar este pedido:\n${decodeURIComponent(summary)}\n\nNombre: ${decodeURIComponent(name)}\nWhatsApp / teléfono: ${decodeURIComponent(phone)}\nEmail: ${decodeURIComponent(email)}`;
+              window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`, "_blank");
             }}>
               <p className="mb-3 font-serif text-xl text-primary-text">Tus datos</p>
               <input name="name" required placeholder="Nombre y apellidos" className="mb-3 w-full rounded-lg border border-muted-pink bg-white px-3 py-2 text-sm" />
               <input name="phone" required placeholder="WhatsApp / teléfono" className="mb-4 w-full rounded-lg border border-muted-pink bg-white px-3 py-2 text-sm" />
-              <button type="submit" className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5B4A50]">Enviar solicitud de pedido</button>
+              <input name="email" type="email" required placeholder="Correo electrónico" className="mb-4 w-full rounded-lg border border-muted-pink bg-white px-3 py-2 text-sm" />
+              <button type="submit" className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary-text px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5B4A50]">Enviar por WhatsApp</button>
+              <button type="button" onClick={(event) => {
+                const form = event.currentTarget.form;
+                if (!form || !form.reportValidity()) return;
+                const values = new FormData(form);
+                const body = `Pedido:\n${items.map((item) => `${item.quantity} x ${item.product.name}`).join("\n")}\n\nNombre: ${values.get("name")}\nWhatsApp / teléfono: ${values.get("phone")}\nEmail: ${values.get("email")}`;
+                window.location.href = `mailto:${SITE.email}?subject=Solicitud de pedido Chocova Valencia&body=${encodeURIComponent(body)}`;
+              }} className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-primary-text px-4 py-3 text-sm font-semibold text-primary-text">Enviar por email</button>
               <button type="button" onClick={() => setCheckout(false)} className="mt-3 w-full text-sm text-primary-text underline">Volver a la cesta</button>
             </form>}
           </aside>

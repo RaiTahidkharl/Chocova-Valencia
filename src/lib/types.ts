@@ -1,13 +1,30 @@
-export type ProductCategory = "patisseries" | "gateaux" | "custom" | "mariage";
+export type ProductCategory =
+  | "tartas-especiales"
+  | "tartas-personalizadas"
+  | "tartas-impresion"
+  | "tartas-numero"
+  | "tartas-nevera"
+  | "donuts-rellenos"
+  | "brownies"
+  | "muffins"
+  | "cupcakes"
+  | "cookies"
+  | "mesas-dulces"
+  | "cumpleanos"
+  | "bautizos"
+  | "comuniones"
+  | "bodas"
+  | "eventos-corporativos";
 
 export interface Product {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price?: number;
   priceLabel?: string;
   category: ProductCategory;
   image: string;
+  cta: "cart" | "quote";
   serves?: string;
   leadTime?: string;
   badge?: "nouveau" | "best-seller" | "mariage";
@@ -47,4 +64,6 @@ export interface CakeBuilderData {
   name: string;
   email: string;
   phone: string;
+  product: string;
+  inspiration: File | null;
 }

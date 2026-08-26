@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { SITE } from "@/lib/data";
 import type { CakeBuilderData } from "@/lib/types";
 
 const STEPS = [
@@ -16,7 +17,7 @@ const STEPS = [
 
 const INITIAL: CakeBuilderData = {
   occasion: "",
-  guests: 12,
+  guests: 1,
   size: "",
   flavor: "",
   filling: "",
@@ -31,23 +32,68 @@ const INITIAL: CakeBuilderData = {
   name: "",
   email: "",
   phone: "",
+  product: "",
+  inspiration: null,
 };
 
 export function CakeBuilder() {
   const [step, setStep] = useState(0);
-  const [data, setData] = useState<CakeBuilderData>(INITIAL);
+  const [data, setData] = useState<CakeBuilderData>(() => ({
+    ...INITIAL,
+    product: typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search).get("producto") || "Tarta personalizada"
+      : "Tarta personalizada",
+  }));
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const update = (field: keyof CakeBuilderData, value: string | number) => {
+  const update = (field: keyof CakeBuilderData, value: string | number | File | null) => {
+    setError("");
     setData((prev) => ({ ...prev, [field]: value }));
   };
 
   const next = () => setStep((s) => Math.min(s + 1, STEPS.length - 1));
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
+  const getMessage = () => `Hola Chocova 😊 Me gustaría solicitar un presupuesto para ${data.product}.
+
+Nombre: ${data.name}
+Fecha del evento: ${data.date}
+Tipo de producto: ${data.product}
+Porciones: ${data.guests}
+Sabor: ${data.flavor}
+Tema: ${data.theme || "Consultar"}
+Colores: ${data.colors || "Consultar"}
+Decoración: ${data.decoration || "Consultar"}
+Presupuesto aproximado: ${data.budget || "Consultar"}
+Comentarios: ${data.requirements || "Ninguno"}
+
+${data.inspiration ? "Tengo una imagen de inspiración adjunta." : "No adjunto imagen de inspiración."}`;
+
+  const validate = () => {
+    if (!data.product || !data.name.trim() || !data.phone.trim() || !data.email.trim() || !data.date || !data.flavor || data.guests < 1) {
+      setError("Completa el tipo de producto, nombre, WhatsApp / teléfono, email, fecha, porciones y sabor para continuar.");
+      setStep(6);
+      return false;
+    }
+    return true;
+  };
+
+  const handleWhatsApp = () => {
+    if (!validate()) return;
+    window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(getMessage())}`, "_blank");
+    setSubmitted(true);
+  };
+
+  const handleEmail = () => {
+    if (!validate()) return;
+    window.location.href = `mailto:${SITE.email}?subject=Solicitud de presupuesto Chocova Valencia&body=${encodeURIComponent(getMessage())}`;
+    setSubmitted(true);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    handleWhatsApp();
   };
 
   if (submitted) {
@@ -95,6 +141,10 @@ export function CakeBuilder() {
             <legend className="font-serif text-2xl text-chocolate mb-6">
               ¿Cuál es la ocasión?
             </legend>
+            <label className="mb-4 block text-sm font-medium">
+              Tipo de producto
+              <input type="text" value={data.product} onChange={(e) => update("product", e.target.value)} placeholder="Ej.: Tarta personalizada" className="mt-2 w-full p-3 rounded-lg border border-border bg-cream" required />
+            </label>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 "Cumpleaños",
@@ -128,12 +178,11 @@ export function CakeBuilder() {
               Número de personas
             </legend>
             <input
-              type="range"
-              min={6}
-              max={80}
+              type="number"
+              min={1}
               value={data.guests}
               onChange={(e) => update("guests", Number(e.target.value))}
-              className="w-full accent-caramel"
+              className="w-full p-3 rounded-lg border border-border bg-cream"
             />
             <p className="mt-4 text-center font-serif text-3xl text-chocolate">
               {data.guests} personas
@@ -144,32 +193,9 @@ export function CakeBuilder() {
         {step === 2 && (
           <fieldset>
             <legend className="font-serif text-2xl text-chocolate mb-6">
-              Tamaño de la tarta
+              Formato de la tarta (opcional)
             </legend>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {[
-                "Individual",
-                "15 cm (6-8 porciones)",
-                "20 cm (10-12 porciones)",
-                "25 cm (15-20 porciones)",
-                "Tarta de varios pisos",
-              ].map((s) => (
-                <label
-                  key={s}
-                  className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer ${data.size === s ? "border-caramel bg-caramel/5" : "border-border"}`}
-                >
-                  <input
-                    type="radio"
-                    name="size"
-                    value={s}
-                    checked={data.size === s}
-                    onChange={(e) => update("size", e.target.value)}
-                    className="accent-caramel"
-                  />
-                  {s}
-                </label>
-              ))}
-            </div>
+            <input type="text" value={data.size} onChange={(e) => update("size", e.target.value)} placeholder="Indica el tamaño o formato que necesitas" className="w-full p-3 rounded-lg border border-border bg-cream" />
           </fieldset>
         )}
 
@@ -180,34 +206,24 @@ export function CakeBuilder() {
             </legend>
             <div>
               <label className="block text-sm font-medium mb-2">Sabor</label>
-              <select
+              <input
+                type="text"
                 value={data.flavor}
                 onChange={(e) => update("flavor", e.target.value)}
+                placeholder="Indica el sabor que te gustaría"
                 className="w-full p-3 rounded-lg border border-border bg-cream"
                 required
-              >
-                <option value="">Elegir...</option>
-                <option value="vanille">Vainilla</option>
-                <option value="chocolat">Chocolate</option>
-                <option value="fruits-rouges">Frutos rojos</option>
-                <option value="pistache">Pistache</option>
-                <option value="citron">Citron</option>
-                <option value="caramel">Caramelo salado</option>
-              </select>
+              />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">Relleno</label>
-              <select
+              <input
+                type="text"
                 value={data.filling}
                 onChange={(e) => update("filling", e.target.value)}
+                placeholder="Indica el relleno, si lo tienes claro (opcional)"
                 className="w-full p-3 rounded-lg border border-border bg-cream"
-              >
-                <option value="">Elegir...</option>
-                <option value="creme">Crema ligera</option>
-                <option value="mousse">Mousse</option>
-                <option value="confiture">Mermelada casera</option>
-                <option value="ganache">Ganache de chocolate</option>
-              </select>
+              />
             </div>
           </fieldset>
         )}
@@ -231,16 +247,13 @@ export function CakeBuilder() {
               onChange={(e) => update("colors", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
             />
-            <select
+            <input
+              type="text"
+              placeholder="Describe la decoración que imaginas (opcional)"
               value={data.decoration}
               onChange={(e) => update("decoration", e.target.value)}
               className="w-full p-3 rounded-lg border border-border bg-cream"
-            >
-              <option value="">Nivel de decoración</option>
-              <option value="simple">Sencillo y elegante</option>
-              <option value="medium">Decorado</option>
-              <option value="elaborate">Muy elaborado</option>
-            </select>
+            />
             <input
               type="text"
               placeholder="Mensaje en la tarta (opcional)"
@@ -255,6 +268,10 @@ export function CakeBuilder() {
               rows={3}
               className="w-full p-3 rounded-lg border border-border bg-cream resize-none"
             />
+            <label className="block text-sm font-medium">
+              Imagen de inspiración (opcional)
+              <input type="file" accept="image/*" onChange={(e) => update("inspiration", e.target.files?.[0] || null)} className="mt-2 w-full p-3 rounded-lg border border-border bg-cream text-sm" />
+            </label>
           </fieldset>
         )}
 
@@ -279,44 +296,16 @@ export function CakeBuilder() {
               </p>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Modalidad</label>
-              <div className="flex gap-4">
-                {[
-                  { value: "pickup", label: "Recogida en tienda" },
-                  { value: "delivery", label: "Entrega" },
-                ].map((opt) => (
-                  <label
-                    key={opt.value}
-                    className={`flex-1 p-4 rounded-lg border text-center cursor-pointer ${data.fulfillment === opt.value ? "border-caramel bg-caramel/5" : "border-border"}`}
-                  >
-                    <input
-                      type="radio"
-                      name="fulfillment"
-                      value={opt.value}
-                      checked={data.fulfillment === opt.value}
-                      onChange={(e) => update("fulfillment", e.target.value)}
-                      className="sr-only"
-                    />
-                    {opt.label}
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div>
               <label className="block text-sm font-medium mb-2">
                 Presupuesto orientativo
               </label>
-              <select
+              <input
+                type="text"
                 value={data.budget}
                 onChange={(e) => update("budget", e.target.value)}
+                placeholder="Si tienes un presupuesto aproximado, indícalo (opcional)"
                 className="w-full p-3 rounded-lg border border-border bg-cream"
-              >
-                <option value="">Elegir...</option>
-                <option value="50-80">50 – 80 €</option>
-                <option value="80-120">80 – 120 €</option>
-                <option value="120-200">120 – 200 €</option>
-                <option value="200+">200 € o más</option>
-              </select>
+              />
             </div>
           </fieldset>
         )}
@@ -378,9 +367,13 @@ export function CakeBuilder() {
               Continuar
             </Button>
           ) : (
-            <Button type="submit">Recibir mi presupuesto</Button>
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-end">
+              <Button type="button" onClick={handleWhatsApp}>Enviar por WhatsApp</Button>
+              <Button type="button" variant="secondary" onClick={handleEmail}>Enviar por email</Button>
+            </div>
           )}
         </div>
+        {error && <p role="alert" className="mt-4 text-sm font-medium text-red-700">{error}</p>}
       </div>
     </form>
   );

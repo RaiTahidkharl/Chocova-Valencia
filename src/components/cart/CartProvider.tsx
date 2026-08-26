@@ -13,6 +13,7 @@ type CartContextValue = {
   items: CartItem[];
   itemCount: number;
   addToCart: (product: Product, customization?: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
   removeFromCart: (productId: string) => void;
 };
 
@@ -28,12 +29,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
       setItems((current) => {
         const existing = current.find((item) => item.product.id === product.id && item.customization === customization);
         if (existing) {
-          return current.map((item) => item.product.id === product.id
+          return current.map((item) => item.product.id === product.id && item.customization === customization
             ? { ...item, quantity: item.quantity + 1 }
             : item);
         }
         return [...current, { product, quantity: 1, customization }];
       });
+    },
+    updateQuantity: (productId: string, quantity: number) => {
+      setItems((current) => current.flatMap((item) => {
+        if (item.product.id !== productId) return [item];
+        return quantity > 0 ? [{ ...item, quantity }] : [];
+      }));
     },
     removeFromCart: (productId: string) => {
       setItems((current) => current.filter((item) => item.product.id !== productId));

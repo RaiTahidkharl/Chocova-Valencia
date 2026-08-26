@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Imagen de producto próximamente</title>
+  <desc id="desc">Imagen de producto de Chocova Valencia próximamente disponible</desc>
+  <rect width="1200" height="900" fill="#f7eee9"/>
+  <path d="M0 620h1200v280H0z" fill="#efe0da"/>
+  <circle cx="600" cy="390" r="150" fill="#fffaf7" stroke="#c98c82" stroke-width="4"/>
+  <path d="M520 390h160M600 310v160" stroke="#c98c82" stroke-width="8" stroke-linecap="round"/>
+  <text x="600" y="680" fill="#3d3033" font-family="Georgia, serif" font-size="42" text-anchor="middle">Imagen próximamente</text>
+  <text x="600" y="735" fill="#6f5d5d" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Chocova Valencia</text>
+</svg>

@@ -15,7 +15,7 @@ export function VisitSection() {
               </h2>
               <p className="mt-4 leading-relaxed text-[#F5EBE6]/90">
                 Recoge tu pedido en nuestra tienda de Valencia o encárgalo a
-                través de Uber Eats para recibirlo en casa.
+                a través de WhatsApp para consultar las opciones de entrega.
               </p>
               <address className="mt-6 text-sm leading-relaxed not-italic text-[#F5EBE6]">
                 {SITE.address}
@@ -34,10 +34,10 @@ export function VisitSection() {
                   Cómo llegar
                 </Button>
                <Button 
-  href={SITE.ubereats} 
+  href={`https://wa.me/${SITE.whatsapp}`} 
   className="border-2 border-[#FFF0F2] text-[#FFF0F2] bg-transparent hover:bg-[#FFF0F2] hover:text-[#332827] transition-colors duration-200"
 >
-  Uber Eats
+  Hablar por WhatsApp
 </Button>
               </div>
             </div>
