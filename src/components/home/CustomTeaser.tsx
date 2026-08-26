@@ -116,7 +116,7 @@ export function CustomTeaser() {
               type="button"
               onClick={() => bringToFront(cardIndex)}
               className={`absolute h-[250px] w-[175px] overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_15px_30px_rgba(0,0,0,0.12)] transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A85567] sm:h-[310px] sm:w-[220px] ${POSITIONS[position]} ${isLiftedCard ? "z-40 -translate-y-4 translate-x-[120px] rotate-[15deg]" : ""}`}
-              aria-label={isFront ? cake.alt : `Afficher ${cake.alt}`}
+              aria-label={isFront ? cake.alt : `Mostrar ${cake.alt}`}
             >
               <Image
                 src={cake.image}

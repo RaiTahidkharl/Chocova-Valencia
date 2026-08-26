@@ -1,7 +1,7 @@
 import { SITE } from "@/lib/data";
 
 const TRUST_ITEMS = [
-  { icon: "star", label: `${SITE.rating}/5 · ${SITE.reviewCount} avis` },
+  { icon: "star", label: `${SITE.rating}/5 · ${SITE.reviewCount} reseñas` },
   { icon: "pin", label: "Recogida en tienda" },
   { icon: "truck", label: "Entrega local" },
   { icon: "bag", label: "Pedidos por WhatsApp" },

@@ -25,6 +25,7 @@ export interface Product {
   category: ProductCategory;
   image: string;
   cta: "cart" | "quote";
+  availability: string;
   serves?: string;
   leadTime?: string;
   badge?: "nouveau" | "best-seller" | "mariage";

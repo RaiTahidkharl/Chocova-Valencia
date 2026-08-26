@@ -5,10 +5,10 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const CELEBRATIONS = [
-  { title: "Wedding Cakes", text: "A personalised sweet creation for your wedding celebration.", image: "/cakes/black-ribbon-tier.jpg" },
-  { title: "Birthday Cakes", text: "A cake designed around the person, theme and moment being celebrated.", image: "/cakes/birthday-crown.jpg" },
-  { title: "Baptism Cakes", text: "Delicate, personalised cakes for a meaningful family celebration.", image: "/cakes/balloon-baptism.jpg" },
-  { title: "Communion Cakes", text: "Thoughtful cake designs for communion celebrations and family gatherings.", image: "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg" },
+  { title: "Tartas de boda", text: "Una creación dulce y personalizada para celebrar vuestro enlace.", image: "/cakes/black-ribbon-tier.jpg" },
+  { title: "Tartas de cumpleaños", text: "Una tarta pensada para la persona, el tema y el momento que celebráis.", image: "/cakes/birthday-crown.jpg" },
+  { title: "Tartas de bautizo", text: "Tartas delicadas y personalizadas para una celebración familiar especial.", image: "/cakes/balloon-baptism.jpg" },
+  { title: "Tartas de comunión", text: "Diseños cuidados para celebrar la comunión y reunirse en familia.", image: "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg" },
   { title: "Tartas para empresas", text: "Creaciones dulces a medida para eventos de empresa y ocasiones especiales.", image: "/cakes/celebration-artist.jpg" },
 ] as const;
 
@@ -24,8 +24,8 @@ export function CelebrationExplorer() {
   return <section className="py-12 md:py-16">
     <div className="mx-auto max-w-7xl px-4 md:px-8">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[.2em] text-accent-pink">Celebrations</p>
-        <h1 className="mt-3 font-serif text-4xl text-primary-text md:text-5xl">Moments made memorable</h1>
+        <p className="text-sm font-semibold uppercase tracking-[.2em] text-accent-pink">Celebraciones</p>
+        <h1 className="mt-3 font-serif text-4xl text-primary-text md:text-5xl">Momentos para recordar</h1>
         <p className="mt-4 text-primary-text/75">Elige una ocasión y descubre la creación personalizada que Chocova puede preparar para tu celebración.</p>
       </div>
 
@@ -43,7 +43,7 @@ export function CelebrationExplorer() {
         </div>
         <div className="flex items-center p-8 md:p-14 lg:p-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[.18em] text-accent-pink">Selected celebration</p>
+            <p className="text-sm font-semibold uppercase tracking-[.18em] text-accent-pink">Celebración elegida</p>
             <h2 className="mt-4 font-serif text-4xl text-primary-text md:text-5xl">{selected.title}</h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-primary-text/80">{selected.text}</p>
             <Button href="/gateaux-sur-mesure" className="mt-9 bg-primary-text text-white hover:bg-[#5B4A50]">Diseña tu tarta</Button>

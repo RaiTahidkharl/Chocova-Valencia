@@ -62,6 +62,8 @@ export const PRODUCTS: Product[] = [
     category: "tartas-especiales",
     image: "/cakes/aperol-spritz.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
     featured: true,
   },
   {
@@ -71,6 +73,8 @@ export const PRODUCTS: Product[] = [
     category: "tartas-personalizadas",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/martina.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
     featured: true,
   },
   {
@@ -80,6 +84,8 @@ export const PRODUCTS: Product[] = [
     category: "tartas-impresion",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/12/Tarta-impresion-2-1536x2048.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
     featured: true,
   },
   {
@@ -89,6 +95,8 @@ export const PRODUCTS: Product[] = [
     category: "tartas-numero",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/11/tarta_numeros.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
     featured: true,
   },
   {
@@ -98,6 +106,8 @@ export const PRODUCTS: Product[] = [
     category: "tartas-nevera",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/01/2020-11-10-13.12.42-768x1024.jpg",
     cta: "quote",
+    availability: "Consultar disponibilidad",
+    priceLabel: "Precio según diseño",
   },
   {
     id: "donuts-rellenos",
@@ -106,6 +116,7 @@ export const PRODUCTS: Product[] = [
     category: "donuts-rellenos",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/11/2020-11-11-10.46.46-768x1024.jpg",
     cta: "cart",
+    availability: "Consultar disponibilidad",
     featured: true,
   },
   {
@@ -115,6 +126,7 @@ export const PRODUCTS: Product[] = [
     category: "brownies",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/01/2020-10-20-12.21.57-768x1024.jpg",
     cta: "cart",
+    availability: "Consultar disponibilidad",
   },
   {
     id: "muffins",
@@ -123,6 +135,7 @@ export const PRODUCTS: Product[] = [
     category: "muffins",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/01/2020-11-13-12.12.00-768x1024.jpg",
     cta: "cart",
+    availability: "Consultar disponibilidad",
   },
   {
     id: "cupcakes",
@@ -131,6 +144,7 @@ export const PRODUCTS: Product[] = [
     category: "cupcakes",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/cupcakes-768x1024.jpeg",
     cta: "cart",
+    availability: "Consultar disponibilidad",
   },
   {
     id: "cookies",
@@ -139,6 +153,7 @@ export const PRODUCTS: Product[] = [
     category: "cookies",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/01/cookies-1-768x1024.jpeg",
     cta: "cart",
+    availability: "Consultar disponibilidad",
   },
   {
     id: "mesas-dulces",
@@ -147,6 +162,8 @@ export const PRODUCTS: Product[] = [
     category: "mesas-dulces",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/mesas_dulces.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
     featured: true,
   },
   {
@@ -156,6 +173,8 @@ export const PRODUCTS: Product[] = [
     category: "cumpleanos",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/martina.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
   },
   {
     id: "bautizos",
@@ -164,6 +183,8 @@ export const PRODUCTS: Product[] = [
     category: "bautizos",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/IMGefrwefwefwef7.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
   },
   {
     id: "comuniones",
@@ -172,6 +193,8 @@ export const PRODUCTS: Product[] = [
     category: "comuniones",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/comunion.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
   },
   {
     id: "bodas",
@@ -180,6 +203,8 @@ export const PRODUCTS: Product[] = [
     category: "bodas",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/IMG_0378.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
   },
   {
     id: "eventos-corporativos",
@@ -188,6 +213,8 @@ export const PRODUCTS: Product[] = [
     category: "eventos-corporativos",
     image: "https://chocovavalencia.com/wp-content/uploads/2020/12/tartas_empresa-1.jpg",
     cta: "quote",
+    availability: "Encargar con antelación",
+    priceLabel: "Precio según diseño",
   },
 ];
 

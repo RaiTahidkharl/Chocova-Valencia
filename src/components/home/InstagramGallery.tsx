@@ -29,7 +29,7 @@ export function InstagramGallery() {
             @chocovavalencia
           </a>
           <p className="mx-auto mt-3 max-w-xl text-primary-text/75">
-            Nos dernières créations, les coulisses et des inspirations gourmandes.
+            Nuestras últimas creaciones, el día a día del obrador e inspiración dulce.
           </p>
         </header>
 
@@ -66,7 +66,7 @@ export function InstagramGallery() {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#332827] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-text/15 transition-all duration-200 hover:scale-[1.02] hover:bg-[#4A3E3D] active:scale-[0.98]"
           >
             <InstagramIcon className="h-4 w-4" />
-            Suivre @chocovavalencia sur Instagram
+            Seguir a @chocovavalencia en Instagram
           </a>
         </div>
       </div>

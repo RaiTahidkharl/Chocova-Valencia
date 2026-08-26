@@ -15,7 +15,7 @@ export function VisitSection() {
               </h2>
               <p className="mt-4 leading-relaxed text-[#F5EBE6]/90">
                 Recoge tu pedido en nuestra tienda de Valencia o encárgalo a
-                a través de WhatsApp para consultar las opciones de entrega.
+                través de WhatsApp para consultar las opciones de entrega.
               </p>
               <address className="mt-6 text-sm leading-relaxed not-italic text-[#F5EBE6]">
                 {SITE.address}

@@ -4,7 +4,7 @@ import type { Review } from "@/lib/types";
 function ReviewCard({ review }: { review: Review }) {
   return (
     <blockquote className="w-[min(21rem,calc(100vw-3rem))] shrink-0 rounded-2xl border border-muted-pink bg-background-card p-6 text-primary-text shadow-sm">
-      <div className="mb-4 flex gap-0.5 text-accent-pink" aria-label={`${review.rating} sur 5`}>
+      <div className="mb-4 flex gap-0.5 text-accent-pink" aria-label={`${review.rating} de 5`}>
         {Array.from({ length: review.rating }).map((_, index) => (
           <span key={index} aria-hidden>★</span>
         ))}

@@ -44,7 +44,7 @@ export default function StoryPage() {
             y una atención especial a la decoración.
           </p>
           <p>
-            Avec {SITE.reviewCount} avis et une note de {SITE.rating}/5 sur
+            Con {SITE.reviewCount} reseñas y una nota de {SITE.rating}/5 en
             Google, nos enorgullece la atención cercana que destacan nuestros
             clientes, porque una buena tarta empieza con un buen encuentro.
           </p>

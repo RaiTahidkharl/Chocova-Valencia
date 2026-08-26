@@ -7,8 +7,8 @@ import { useCart } from "@/components/cart/CartProvider";
 import type { Product } from "@/lib/types";
 
 const BADGE_LABELS = {
-  nouveau: "Nouveau",
-  "best-seller": "Meilleure vente",
+  nouveau: "Novedad",
+  "best-seller": "Más vendido",
   mariage: "Boda",
 };
 
@@ -23,9 +23,9 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
   const router = useRouter();
   const isQuote = product.cta === "quote";
-  const metadata = product.serves || product.leadTime
-    ? [product.serves ?? "Preparado con mimo", product.leadTime ? `Preparación: ${product.leadTime}` : "Listo para recoger"].join(" · ")
-    : "Disponible para recoger ahora";
+  const metadata = [product.availability, product.serves, product.leadTime ? `Preparación: ${product.leadTime}` : undefined]
+    .filter(Boolean)
+    .join(" · ");
 
   const openQuickView = () => setIsQuickViewOpen(true);
 
@@ -66,7 +66,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="flex items-start justify-between gap-3">
             <h3 className="font-serif text-xl leading-tight text-primary-text">{product.name}</h3>
             <p className="shrink-0 text-right text-base font-bold text-primary-text">
-              {product.price !== undefined && product.priceLabel && (
+              {product.priceLabel && (
                 <span className="mb-0.5 block text-[11px] font-medium text-primary-text/75">
                   {product.priceLabel}
                 </span>
@@ -123,7 +123,10 @@ export function ProductCard({ product }: ProductCardProps) {
             <div className="p-3 pt-5">
               <div className="flex items-start justify-between gap-4">
                 <h2 id={`quick-view-${product.id}`} className="font-serif text-3xl text-primary-text">{product.name}</h2>
-                <p className="text-lg font-bold text-primary-text">{product.price !== undefined ? `${product.price}€` : "Consultar"}</p>
+                <p className="text-right text-lg font-bold text-primary-text">
+                  {product.priceLabel && <span className="mb-0.5 block text-[11px] font-medium text-primary-text/75">{product.priceLabel}</span>}
+                  {product.price !== undefined ? `${product.price}€` : "Consultar"}
+                </p>
               </div>
               <p className="mt-3 leading-7 text-[#4A3E3D]">{product.description}</p>
               <p className="mt-3 text-sm font-semibold text-[#4A3E3D]">{metadata}</p>
