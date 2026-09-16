@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/Button";
 import { getProductsByCategories } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Repostería",
-  description: "Donuts rellenos, brownies, muffins, cupcakes y cookies en Valencia.",
+  title: "Tartas de la semana",
+  description: "Tartas refrigeradas que cambian cada semana en Valencia.",
 };
 
 export default function PatisseriesPage() {
-  const products = getProductsByCategories(["donuts-rellenos", "brownies", "muffins", "cupcakes", "cookies"]);
+  const products = getProductsByCategories(["tartas-nevera"]);
 
   return (
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
-          title="Repostería"
-          subtitle="Donuts rellenos, brownies, muffins, cupcakes y cookies para disfrutar cada día."
+          title="Tartas de la semana"
+          subtitle="Tartas refrigeradas que cambian cada semana."
         />
         <div className="mb-8">
           <Button href="/boutique" variant="ghost">

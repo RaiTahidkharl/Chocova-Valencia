@@ -9,7 +9,7 @@ export function CategoryGrid() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
           title="¿Qué te apetece hoy?"
-          subtitle="Dulces del día, tartas listas para encargar o creaciones totalmente personalizadas."
+          subtitle="Tartas de la semana, tartas listas para encargar o creaciones totalmente personalizadas."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CATEGORY_TILES.map((cat) => (

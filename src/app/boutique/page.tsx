@@ -11,8 +11,8 @@ const CATALOG_GROUPS: { title: string; categories: ProductCategory[] }[] = [
     categories: ["tartas-especiales", "tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"],
   },
   {
-    title: "Repostería",
-    categories: ["donuts-rellenos", "brownies", "muffins", "cupcakes", "cookies"],
+    title: "Tartas de la semana",
+    categories: ["tartas-nevera"],
   },
   {
     title: "Eventos",
@@ -32,12 +32,12 @@ export default function BoutiquePage() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeading
           title="La tienda"
-          subtitle="Dulces del día, tartas listas para encargar y creaciones de temporada."
+          subtitle="Tartas de la semana, tartas listas para encargar y creaciones de temporada."
         />
 
         <div className="flex flex-wrap gap-3 mb-10 justify-center">
           <Button href="/boutique/patisseries" variant="secondary">
-            Pastelería
+            Tartas de la semana
           </Button>
           <Button href="/boutique/gateaux" variant="secondary">
             Tartas

@@ -25,8 +25,8 @@ export const NAV_LINKS = [
 export const CATEGORY_TILES: CategoryTile[] = [
   {
     id: "patisseries",
-    title: "Repostería",
-    description: "Donuts, brownies, muffins, cupcakes y cookies",
+    title: "Tartas de la semana",
+    description: "Tartas refrigeradas que cambian cada semana",
     href: "/boutique/patisseries",
     image: "/cakes/strawberry-verrines.webp",
   },
@@ -101,8 +101,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "tartas-nevera",
-    name: "Tartas de Nevera",
-    description: "Tartas frescas para conservar en frío y disfrutar bien refrigeradas.",
+    name: "Tartas de la semana",
+    description: "Tartas refrigeradas que cambian cada semana.",
     category: "tartas-nevera",
     image: "https://chocovavalencia.com/wp-content/uploads/2021/01/2020-11-10-13.12.42-768x1024.jpg",
     cta: "quote",
