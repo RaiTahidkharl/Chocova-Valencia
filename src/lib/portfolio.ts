@@ -6,6 +6,14 @@ export type PortfolioCollection = {
   label: string;
   description: string;
   images: { src: string; alt: string }[];
+  coverImage?: { src: string; alt: string };
+};
+
+const coverImages: Record<string, { src: string; alt: string }> = {
+  infantiles: {
+    src: "/cakes/farm-theme.jpg",
+    alt: "Tarta infantil de granja de Chocova Valencia",
+  },
 };
 
 const collections = [
@@ -26,6 +34,6 @@ export function getPortfolioCollections(): PortfolioCollection[] {
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
       .map((file) => ({ src: `/portfolio/${id}/${file}`, alt: `${label} de Chocova Valencia` }));
 
-    return { id, label, description, images };
+    return { id, label, description, images, coverImage: coverImages[id] };
   });
 }
