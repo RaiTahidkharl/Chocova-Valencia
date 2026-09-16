@@ -5,11 +5,11 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const CELEBRATIONS = [
-  { title: "Tartas de boda", text: "Una creación dulce y personalizada para celebrar vuestro enlace.", image: "/cakes/black-ribbon-tier.jpg" },
-  { title: "Tartas de cumpleaños", text: "Una tarta pensada para la persona, el tema y el momento que celebráis.", image: "/cakes/birthday-crown.jpg" },
-  { title: "Tartas de bautizo", text: "Tartas delicadas y personalizadas para una celebración familiar especial.", image: "/cakes/balloon-baptism.jpg" },
-  { title: "Tartas de comunión", text: "Diseños cuidados para celebrar la comunión y reunirse en familia.", image: "/instagram/506395092_1243760020456100_8896445037206883256_n.jpg" },
-  { title: "Tartas para empresas", text: "Creaciones dulces a medida para eventos de empresa y ocasiones especiales.", image: "/cakes/celebration-artist.jpg" },
+  { title: "Tartas de boda", text: "Una creación dulce y personalizada para celebrar vuestro enlace.", image: "/chocova/boda.jpg" },
+  { title: "Tartas de cumpleaños", text: "Una tarta pensada para la persona, el tema y el momento que celebráis.", image: "/chocova/tarta-adultos.jpg" },
+  { title: "Tartas de bautizo", text: "Tartas delicadas y personalizadas para una celebración familiar especial.", image: "/chocova/bautizo.jpg" },
+  { title: "Tartas de comunión", text: "Diseños cuidados para celebrar la comunión y reunirse en familia.", image: "/chocova/comunion.jpg" },
+  { title: "Tartas para empresas", text: "Creaciones dulces a medida para eventos de empresa y ocasiones especiales.", image: "/chocova/tartas-empresa.jpg" },
 ] as const;
 
 export function CelebrationExplorer() {

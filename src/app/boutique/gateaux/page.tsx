@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function GateauxPage() {
-  const products = getProductsByCategories(["tartas-especiales", "tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"]);
+  const products = getProductsByCategories(["tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"]);
 
   return (
     <div className="py-12 md:py-16">

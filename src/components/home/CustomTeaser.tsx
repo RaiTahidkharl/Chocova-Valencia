@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 
 const CAKE_CARDS = [
   {
-    image: "/cakes/pink-ribbon.jpg",
+    image: "/chocova/tarta-adultos.jpg",
     alt: "Tarta rosa personalizada con lazos",
   },
   {
-    image: "/cakes/aperol-spritz.jpg",
+    image: "/chocova/tarta-impresion.jpg",
     alt: "Tarta personalizada Aperol Spritz",
   },
   {
-    image: "/cakes/sunflower-celebration.jpg",
+    image: "/chocova/tarta-numeros.jpg",
     alt: "Tarta de celebración con girasoles",
   },
 ];

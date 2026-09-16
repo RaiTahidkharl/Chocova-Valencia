@@ -8,7 +8,7 @@ import type { ProductCategory } from "@/lib/types";
 const CATALOG_GROUPS: { title: string; categories: ProductCategory[] }[] = [
   {
     title: "Tartas",
-    categories: ["tartas-especiales", "tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"],
+    categories: ["tartas-personalizadas", "tartas-impresion", "tartas-numero", "tartas-nevera"],
   },
   {
     title: "Tartas de la semana",

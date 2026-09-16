@@ -1,5 +1,4 @@
 export type ProductCategory =
-  | "tartas-especiales"
   | "tartas-personalizadas"
   | "tartas-impresion"
   | "tartas-numero"
