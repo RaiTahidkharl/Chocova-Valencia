@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 
 const CAKE_CARDS = [
   {
-    image: "/chocova/tarta-adultos.jpg",
-    alt: "Tarta rosa personalizada con lazos",
+    image: "/portfolio/adultos/photo-258.jpg",
+    alt: "Tarta personalizada para adultos de Chocova Valencia",
   },
   {
-    image: "/chocova/tarta-impresion.jpg",
-    alt: "Tarta personalizada Aperol Spritz",
+    image: "/portfolio/bodas/08.jpg",
+    alt: "Tarta de boda de Chocova Valencia",
   },
   {
-    image: "/chocova/tarta-numeros.jpg",
+    image: "/portfolio/infantiles/photo-329.jpg",
     alt: "Tarta de celebración con girasoles",
   },
 ];

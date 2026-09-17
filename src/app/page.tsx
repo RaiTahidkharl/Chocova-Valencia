@@ -8,7 +8,7 @@ import { StoryTeaser } from "@/components/home/StoryTeaser";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { VisitSection } from "@/components/home/VisitSection";
 import { PortfolioGallery } from "@/components/gallery/PortfolioGallery";
-import { getPortfolioCollections } from "@/lib/portfolio";
+import { getPortfolioPreviews } from "@/lib/portfolio";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <CategoryGrid />
       <FeaturedProducts />
       <CustomTeaser />
-      <section className="bg-[#FFF8FA] py-16 md:py-24"><div className="mx-auto max-w-7xl px-4 md:px-8"><PortfolioGallery collections={getPortfolioCollections()} preview /></div></section>
+      <section className="bg-[#FFF8FA] py-16 md:py-24"><div className="mx-auto max-w-7xl px-4 md:px-8"><PortfolioGallery collections={getPortfolioPreviews()} preview /></div></section>
       <ReviewsSection />
       <StoryTeaser />
       <InstagramGallery />

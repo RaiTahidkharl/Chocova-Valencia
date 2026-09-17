@@ -9,13 +9,6 @@ export type PortfolioCollection = {
   coverImage?: { src: string; alt: string };
 };
 
-const coverImages: Record<string, { src: string; alt: string }> = {
-  infantiles: {
-    src: "/cakes/farm-theme.jpg",
-    alt: "Tarta infantil de granja de Chocova Valencia",
-  },
-};
-
 const collections = [
   ["infantiles", "Tartas infantiles", "Diseños creados para celebrar los momentos más pequeños."],
   ["adultos", "Tartas adultos", "Creaciones para cumpleaños y celebraciones especiales."],
@@ -34,6 +27,14 @@ export function getPortfolioCollections(): PortfolioCollection[] {
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
       .map((file) => ({ src: `/portfolio/${id}/${file}`, alt: `${label} de Chocova Valencia` }));
 
-    return { id, label, description, images, coverImage: coverImages[id] };
+    return { id, label, description, images, coverImage: images[0] };
+  });
+}
+
+// Homepage cards intentionally contain only a cover photo; full lists load on /galerie.
+export function getPortfolioPreviews(): PortfolioCollection[] {
+  return getPortfolioCollections().map((collection) => {
+    const coverImage = collection.images[0];
+    return { ...collection, images: coverImage ? [coverImage] : [], coverImage };
   });
 }

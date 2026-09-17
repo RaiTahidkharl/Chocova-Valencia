@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   description: "Galería de fotos: creaciones de Chocova Valencia.",
 };
 
-export default function GaleriePage() {
+export default async function GaleriePage({ searchParams }: PageProps<"/galerie">) {
+  const { collection } = await searchParams;
+  const initialCollection = typeof collection === "string" ? collection : undefined;
   return (
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
@@ -16,7 +18,7 @@ export default function GaleriePage() {
           title="Nuestras creaciones"
           subtitle="Descubre algunas de las tartas y dulces que hemos creado para momentos muy especiales."
         />
-        <PortfolioGallery collections={getPortfolioCollections()} />
+        <PortfolioGallery collections={getPortfolioCollections()} initialCollection={initialCollection} />
       </div>
     </div>
   );
