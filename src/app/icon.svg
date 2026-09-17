@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Chocova Valencia">
+  <rect width="64" height="64" rx="16" fill="#FFF0F2"/>
+  <path d="M19 49c0 4 5.8 7 13 7s13-3 13-7V32H19v17Z" fill="#FF9AB7"/>
+  <path d="M21 32h22v17H21z" fill="#FFD6E2"/>
+  <path d="M24 23h16v10H24z" fill="#FF9AB7"/>
+  <path d="M26 15h12v8H26z" fill="#FFD6E2"/>
+  <path d="M28 10h8v5h-8z" fill="#FF9AB7"/>
+  <path d="M17 32h30" stroke="#E75182" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M22 41h20M22 49h20" stroke="#E75182" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="28" cy="19" r="1.5" fill="#E75182"/><circle cx="36" cy="19" r="1.5" fill="#E75182"/>
+  <circle cx="26" cy="28" r="1.5" fill="#E75182"/><circle cx="32" cy="27" r="1.5" fill="#E75182"/><circle cx="38" cy="28" r="1.5" fill="#E75182"/>
+  <path d="M32 7V4" stroke="#E75182" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18 56c3 2.5 7 3.5 14 3.5S43 58.5 46 56" fill="none" stroke="#49333B" stroke-width="2" stroke-linecap="round"/>
+</svg>
