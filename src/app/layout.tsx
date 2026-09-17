@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description:
     "Pastelería artesanal y tartas personalizadas en Valencia. Dulces selectos, tartas de cumpleaños, bodas y creaciones hechas a medida.",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: SITE.name,
     description: SITE.tagline,
