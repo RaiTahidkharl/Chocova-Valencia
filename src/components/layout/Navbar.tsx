@@ -24,9 +24,9 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-muted-pink bg-background-light/90 shadow-sm shadow-primary-text/10 backdrop-blur-md">
+      <header className="fixed left-0 right-0 top-0 z-50 isolate transform-gpu border-b border-muted-pink bg-background-light/90 shadow-sm shadow-primary-text/10 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
-          <Link href="/" className="font-serif text-xl text-primary-text md:text-2xl">
+          <Link href="/" className="font-serif text-lg leading-[1.1] text-primary-text sm:text-xl md:text-2xl">
             Chocova Valencia
           </Link>
 
@@ -39,7 +39,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button href="/gateaux-sur-mesure" className="hidden bg-primary-text text-white hover:bg-[#5B4A50] lg:inline-flex">
+            <Button href="/gateaux-sur-mesure" className="hidden shrink-0 whitespace-nowrap bg-primary-text text-white hover:bg-[#5B4A50] lg:inline-flex">
               Diseña tu tarta
             </Button>
             <button

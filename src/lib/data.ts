@@ -230,7 +230,7 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "4",
-    author: "Client Google",
+    author: "Cliente de Google",
     rating: 5,
     text: "Atención cercana, dulces deliciosos y tartas preciosas. Una visita imprescindible en Valencia.",
     tag: "Atención",

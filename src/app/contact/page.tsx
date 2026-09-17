@@ -4,7 +4,7 @@ import { SITE } from "@/lib/data";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contacto",
   description: "Contacta con Chocova Valencia en Valencia.",
 };
 
@@ -15,7 +15,7 @@ export default function ContactPage() {
     <div className="py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="text-center mb-12">
-          <h1 className="font-serif text-4xl text-chocolate">Contact</h1>
+          <h1 className="font-serif text-4xl text-chocolate">Contacto</h1>
           <p className="mt-3 text-muted">
             ¿Tienes una pregunta o un encargo especial? Escríbenos o visítanos
             en la tienda.

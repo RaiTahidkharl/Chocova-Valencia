@@ -31,9 +31,9 @@ export function ReviewsSection() {
     <section id="avis" className="overflow-hidden bg-[#FFF8FA] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-10 text-center md:mb-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-pink">Avis clients</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-pink">Opiniones de clientes</p>
           <h2 className="mt-3 font-serif text-3xl text-primary-text md:text-4xl">
-            Ce que disent nos clients
+            Lo que dicen nuestros clientes
           </h2>
           <p className="mt-3 text-primary-text/75">
             4,8 sobre 5 · 168 reseñas en Google · Valencia
@@ -41,7 +41,7 @@ export function ReviewsSection() {
         </div>
       </div>
 
-      <div className="review-marquee" aria-label="Avis de nos clients">
+      <div className="review-marquee" aria-label="Opiniones de nuestros clientes">
         <div className="review-marquee-track">
           <div className="review-marquee-group">
             {REVIEWS.map((review) => (

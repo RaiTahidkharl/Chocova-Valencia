@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 
 const CAKE_CARDS = [
   {
-    image: "/portfolio/adultos/photo-258.jpg",
-    alt: "Tarta personalizada para adultos de Chocova Valencia",
+    image: "/portfolio/bautizos-comuniones/01.jpg",
+    alt: "Tarta de comunión de Chocova Valencia",
   },
   {
-    image: "/portfolio/bodas/08.jpg",
+    image: "/portfolio/bodas/01.jpg",
     alt: "Tarta de boda de Chocova Valencia",
   },
   {
-    image: "/portfolio/infantiles/photo-329.jpg",
-    alt: "Tarta de celebración con girasoles",
+    image: "/portfolio/mesas-dulces/01.jpg",
+    alt: "Mesa dulce de Chocova Valencia",
   },
 ];
 
@@ -35,25 +35,20 @@ const POSITIONS = [
 export function CustomTeaser() {
   const [stack, setStack] = useState([0, 1, 2]);
   const [isPaused, setIsPaused] = useState(false);
-  const [isShuffling, setIsShuffling] = useState(false);
 
   useEffect(() => {
     if (isPaused) return;
 
     const timer = window.setTimeout(() => {
-      setIsShuffling(true);
-      window.setTimeout(() => {
-        setStack(([backLeft, backRight, front]) => [front, backLeft, backRight]);
-        setIsShuffling(false);
-      }, 600);
-    }, 4000);
+      setStack(([backLeft, backRight, front]) => [front, backLeft, backRight]);
+    }, 4500);
 
     return () => window.clearTimeout(timer);
   }, [isPaused, stack]);
 
   function bringToFront(cardIndex: number) {
     const position = stack.indexOf(cardIndex);
-    if (position === 2 || isShuffling) return;
+    if (position === 2) return;
 
     const [backLeft, backRight, front] = stack;
     setStack(position === 0 ? [front, backRight, backLeft] : [front, backLeft, backRight]);
@@ -98,7 +93,7 @@ export function CustomTeaser() {
         </div>
 
         <div
-          className="relative mx-auto h-[330px] w-full max-w-[500px] [perspective:1000px] sm:h-[390px]"
+          className="relative isolate mx-auto h-[330px] w-full max-w-[500px] [perspective:1000px] sm:h-[390px]"
           aria-label="Ejemplos de tartas personalizadas"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -108,14 +103,13 @@ export function CustomTeaser() {
           {CAKE_CARDS.map((cake, cardIndex) => {
             const position = stack.indexOf(cardIndex);
             const isFront = position === 2;
-            const isLiftedCard = isShuffling && isFront;
 
             return (
             <button
               key={cake.image}
               type="button"
               onClick={() => bringToFront(cardIndex)}
-              className={`absolute h-[250px] w-[175px] overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_15px_30px_rgba(0,0,0,0.12)] transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A85567] sm:h-[310px] sm:w-[220px] ${POSITIONS[position]} ${isLiftedCard ? "z-40 -translate-y-4 translate-x-[120px] rotate-[15deg]" : ""}`}
+              className={`absolute left-1/2 top-0 h-[250px] w-[175px] overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_15px_30px_rgba(0,0,0,0.12)] transform-gpu will-change-transform transition-[transform,opacity] duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A85567] sm:h-[310px] sm:w-[220px] ${POSITIONS[position]}`}
               aria-label={isFront ? cake.alt : `Mostrar ${cake.alt}`}
             >
               <Image
